@@ -41,16 +41,16 @@ autocmd FileType tex imap <F5> <ESC>:w<CR>:!pdflatex %<CR><CR>a
 " autocmd BufRead,BufNewFile */textparts/* map <F4> :w<CR>:!cd ..<CR>:!pdflatex Diplomarbeit.tex<CR><CR>:!cd ./textparts<CR>
 
 " LaTeX open pdf
-autocmd FileType tex map <F6> :xdg-open %<CR><CR>
-autocmd FileType tex imap <F6> <ESC>:xdg-open %<CR><CR>a
+autocmd FileType tex map <F6> :execute "!xdg-open ".substitute(@%, ".tex", ".pdf", "")<CR><CR>
+autocmd FileType tex imap <F6> <ESC>:execute "!xdg-open ".substitute(@%, ".tex", ".pdf", "")<CR><CR>a
 
 " Markdown save, compile
 autocmd FileType markdown map <F5> :w<CR>:execute "!pandoc --verbose -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>
 autocmd FileType markdown imap <F5> <ESC>:w<CR>:execute "!pandoc --verbose -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>a
 
 " Markdown open pdf
-autocmd FileType markdown map <F6> :execute "!powershell.exe start ".substitute(@%, ".md", ".pdf", "")<CR><CR>
-autocmd FileType markdown imap <F6> <ESC>:execute "!powershell.exe start ".substitute(@%, ".md", ".pdf", "")<CR><CR>a
+autocmd FileType markdown map <F6> :execute "!xdg-open ".substitute(@%, ".md", ".pdf", "")<CR><CR>
+autocmd FileType markdown imap <F6> <ESC>:execute "!xdg-open ".substitute(@%, ".md", ".pdf", "")<CR><CR>a
 
 " Markdown to HTML save and compile
 autocmd FileType markdown map <F7> :w<CR>:execute "!pandoc --verbose -f markdown -t html -o ".substitute(@%, ".md", ".html", "")." ".@%." -c styles.css -s"<CR><CR>
