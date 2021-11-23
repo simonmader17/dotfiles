@@ -131,6 +131,7 @@ Plugin 'lervag/vimtex'
 Plugin 'frazrepo/vim-rainbow'
 " Plugin 'itchyny/lightline.vim'
 
+Plugin 'mboughaba/i3config.vim'
 
 call vundle#end()
 filetype plugin indent on
