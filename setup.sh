@@ -20,6 +20,9 @@ mkdir -pv ~/.config/fontconfig/conf.d
 cp -fv ~/Downloads/awesome-terminal-fonts/config/* ~/.config/fontconfig/conf.d
 fc-cache -fv ~/.fonts
 
+git clone https://github.com/powerline/fonts.git ~/Downloads/powerline-fonts
+source ~/Downloads/powerline-fonts/install.sh
+
 ln -sfv ~/my-configs/my-picom/picom.conf ~/.config/picom.conf
 
 mkdir -pv ~/.config/ranger
