@@ -12,6 +12,14 @@ git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/bumb
 mkdir -pv ~/.config/i3
 ln -sfv ~/my-configs/my-i3/i3.config ~/.config/i3/config
 
+git clone https://github.com/gabrielelana/awesome-terminal-fonts ~/Downloads/awesome-terminal-fonts
+mkdir -pv ~/.fonts
+cp -fv ~/Downloads/awesome-terminal-fonts/build/*.ttf ~/.fonts
+cp -fv ~/Downloads/awesome-terminal-fonts/build/*.sh ~/.fonts
+mkdir -pv ~/.config/fontconfig/conf.d
+cp -fv ~/Downloads/awesome-terminal-fonts/config/* ~/.config/fontconfig/conf.d
+fc-cache -fv ~/.fonts
+
 ln -sfv ~/my-configs/my-picom/picom.conf ~/.config/picom.conf
 
 mkdir -pv ~/.config/ranger
