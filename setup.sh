@@ -7,6 +7,8 @@ ln -sfv ~/my-configs/my-alacritty/alacritty.yml ~/.config/alacritty/alacritty.ym
 
 ln -sfv ~/my-configs/my-bashrc/.bashrc ~/.bashrc
 
+git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/bumblebee-status
+
 mkdir -pv ~/.config/i3
 ln -sfv ~/my-configs/my-i3/i3.config ~/.config/i3/config
 
