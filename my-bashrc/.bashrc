@@ -118,8 +118,17 @@ fi
 
 
 
-PS1="\[\e[31m\][\[\e[92m\]simon\[\e[37m\]:\[\e[94m\]\w\[\e[31m\]]\[\e[37m\]$\[\e[00m\] "
+# PS1="[\u@\h \W]\$ "
+# PS1="\[\e[31m\][\[\e[92m\]simon\[\e[37m\]:\[\e[94m\]\w\[\e[31m\]]\[\e[37m\]$\[\e[00m\] "
+PS1="\[\e[31m\][\[\e[92m\]simon\[\e[37m\] \[\e[94m\]\w\[\e[31m\]]\[\e[37m\]$\[\e[00m\] "
+# PS1='\[\033[1;31m\]$ >\[\033[00m\] '
 
 source ~/.fonts/*.sh
 
 wal -R && clear
+
+
+# My Aliases
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
