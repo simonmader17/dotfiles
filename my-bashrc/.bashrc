@@ -132,3 +132,8 @@ wal -R && clear
 alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
+
+alias ls='exa -al --color=always --group-directories-first'
+alias la='exa -a --color=always --group-directories-first'
+alias ll='exa -l --color=always --group-directories-first'
+alias lt='exa -aT --color=always --group-directories-first'
