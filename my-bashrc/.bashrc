@@ -132,7 +132,7 @@ PS1="\[\e[31m\][\[\e[92m\]simon\[\e[37m\] \[\e[94m\]\w\[\e[31m\]]\[\e[37m\]$\[\e
 
 source ~/.fonts/*.sh
 
-wal -R && clear
+wal -R -q
 
 
 # My Aliases

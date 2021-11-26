@@ -28,7 +28,8 @@ if status is-interactive
 end
 
 # On Startup
-wal -R && clear
+# wal -R && clear
+wal -R -q
 bash ~/.fonts/*.sh
 
 # My Aliases
