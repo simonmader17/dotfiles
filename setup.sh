@@ -7,6 +7,9 @@ ln -sfv ~/my-configs/my-alacritty/alacritty.yml ~/.config/alacritty/alacritty.ym
 
 ln -sfv ~/my-configs/my-bashrc/.bashrc ~/.bashrc
 
+mkdir -pv ~/.config/fish
+ln -sfv ~/my-configs/my-fish/config.fish.sh ~/.config/fish/config.fish
+
 git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/bumblebee-status
 
 mkdir -pv ~/.config/i3
