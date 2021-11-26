@@ -4,7 +4,7 @@ end
 
 # On Startup
 wal -R && clear
-source ~/.fonts/*.sh
+bash ~/.fonts/*.sh
 
 # My Aliases
 alias mv='mv -i'
@@ -15,3 +15,5 @@ alias ls='exa -al --color=always --group-directories-first'
 alias la='exa -a --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
+
+alias cat='batcat --paging=never --style=grid'
