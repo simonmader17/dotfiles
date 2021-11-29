@@ -22,6 +22,8 @@ function fish_greeting
 	fish_logo
 end
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # On Startup
 # wal -R && clear
 wal -R -q
