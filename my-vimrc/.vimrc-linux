@@ -133,6 +133,8 @@ Plugin 'frazrepo/vim-rainbow'
 
 Plugin 'mboughaba/i3config.vim'
 
+Plugin 'itchyny/lightline.vim'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -171,3 +173,22 @@ let g:snipMate = { 'snippet_version': 0 }
 " 	      \ let &scrolloff=winheight(win_getid())/2
 " augroup END
 " set scrolloff=999
+
+" lightline
+set laststatus=2
+set noshowmode
+let g:lightline = {
+	\ 'colorscheme': 'ayu_dark',
+	\ }
+
+autocmd VimEnter * call SetupLightlineColors()
+function SetupLightlineColors() abort
+	" transparent background in statusbar
+	let l:palette = lightline#palette()
+
+	let l:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
+    let l:palette.inactive.middle = l:palette.normal.middle
+    let l:palette.tabline.middle = l:palette.normal.middle
+
+	call lightline#colorscheme()
+endfunction
