@@ -9,6 +9,7 @@ ln -sfv ~/my-configs/my-bashrc/.bashrc ~/.bashrc
 
 mkdir -pv ~/.config/fish
 ln -sfv ~/my-configs/my-fish/config.fish.sh ~/.config/fish/config.fish
+fish_vi_key_bindings
 
 git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/bumblebee-status
 
