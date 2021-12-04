@@ -15,6 +15,7 @@ git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/bumb
 
 mkdir -pv ~/.config/i3
 ln -sfv ~/my-configs/my-i3/i3.config ~/.config/i3/config
+ln -sfv ~/my-configs/my-i3/pacmd-switch-sink.sh ~/.config/i3/pacmd-switch-sink.sh
 
 git clone https://github.com/gabrielelana/awesome-terminal-fonts ~/Downloads/awesome-terminal-fonts
 mkdir -pv ~/.fonts
