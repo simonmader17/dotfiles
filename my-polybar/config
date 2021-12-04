@@ -117,7 +117,7 @@ interval = 25
 mount-0 = /
 
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-mounted = %{F#0a81f5}SSD%{F-} : %used% / %free%
+label-mounted = %{F#0a81f5}SSD%{F-} : %used% / %total% (%percentage_used%%)
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -230,7 +230,8 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%% RAM
+;label = %percentage_used%% RAM
+label = %gb_used% / %gb_total% (%percentage_used%%) RAM
 
 [module/wlan]
 type = internal/network
