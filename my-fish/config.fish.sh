@@ -26,7 +26,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # On Startup
 # wal -R && clear
-wal -R -q
+wal -Rqe
 bash ~/.fonts/*.sh
 
 # My Aliases
