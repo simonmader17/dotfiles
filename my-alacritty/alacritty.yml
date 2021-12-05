@@ -3,6 +3,11 @@ window:
   padding:
     x: 10
     y: 10
+font:
+  normal:
+    family: Unifont
+    style: Regular
+  size: 14
 
 # XTerm's default colors
 colors:
