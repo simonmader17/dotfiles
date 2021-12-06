@@ -62,15 +62,16 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 0
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = Inconsolata for Powerline:style=Medium:pixelsize=13:antialias=true;1
+;font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:pixelsize=13:antialias=true;1
+;font-2 = siji:pixelsize=13;1
+font-2 = FontAwesome:pixelsize=12;2
 ; font-0 = Inconsolata:pixelsize=10;1
 ; font-1 = Inconsolata:pixelsize=10;1
 ; font-2 = Inconsolata:pixelsize=10;1
-; font-0 = Inconsolata for Powerline:style=Medium:pixelsize=11:antialias=false
 ; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ; font-2 = FontAwesome:pixelsize=10;4
 
@@ -124,7 +125,7 @@ interval = 25
 mount-0 = /
 
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-mounted = %{F#0a81f5}SSD%{F-} : %used% / %total% (%percentage_used%%)
+label-mounted = %{F#0a81f5}%{F-}: %used% / %total% (%percentage_used%%)
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -167,7 +168,7 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
@@ -229,7 +230,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
-label = %percentage:2%% %{F#0a81f5}CPU%{F-}
+label = %percentage:2%% %{F#0a81f5}CPU %{F-}
 
 [module/memory]
 type = internal/memory
@@ -238,7 +239,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 ;label = %percentage_used%% RAM
-label = %gb_used% / %gb_total% (%percentage_used%%) %{F#0a81f5}RAM%{F-}
+label = %gb_used% / %gb_total% (%percentage_used%%) %{F#0a81f5}RAM %{F-}
 
 [module/wlan]
 type = internal/network
@@ -298,10 +299,10 @@ label = %time% %date%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = %{F#0a81f5}VOL%{F-} %percentage%%
+label-volume = %{F#0a81f5}%{F-} %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -399,7 +400,7 @@ format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature-c% %{F#0a81f5}TEMP%{F-}
+label = %temperature-c% %{F#0a81f5}TEMP %{F-}
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
@@ -415,7 +416,8 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+;label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
