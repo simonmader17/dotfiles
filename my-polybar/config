@@ -78,7 +78,8 @@ font-2 = FontAwesome:pixelsize=12;2
 modules-left = i3 xwindow
 modules-center = mpd
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu wlan eth battery temperature date powermenu
+enable-ipc = true
 
 tray-position = right
 tray-padding = 2
@@ -117,6 +118,14 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
+[module/audiodevice]
+type = custom/ipc
+hook-0 = ~/.config/polybar/audiodevice.sh
+initial = 1
+format =  <output>%{F#dfdfdf}:%{F-}
+format-foreground = #0a81f5
+click-left = bash $HOME/.config/i3/pacmd-switch-sink.sh && polybar-msg hook audiodevice 1
 
 [module/filesystem]
 type = internal/fs
@@ -299,7 +308,8 @@ label = %time% %date%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = %{F#0a81f5}%{F-} %percentage%%
+;label-volume = %{F#0a81f5}%{F-} %percentage%%
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =  muted
