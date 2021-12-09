@@ -9,6 +9,9 @@ font:
     style: Regular
   size: 14
 
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
+
 # XTerm's default colors
 colors:
    # Default colors

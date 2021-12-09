@@ -40,3 +40,5 @@ alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
 
 alias cat='batcat --paging=never --style=grid'
+
+# vim:ft=dosini
