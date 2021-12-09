@@ -216,7 +216,8 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = 
+label-foreground = #0a81f5
 
 bar-width = 10
 bar-indicator = |
@@ -224,7 +225,7 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 1
 bar-fill = ─
 bar-fill-font = 1
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #0a81f5
 bar-empty = ─
 bar-empty-font = 1
 bar-empty-foreground = ${colors.foreground-alt}
@@ -376,32 +377,36 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging> %{F#0a81f5}%{F-}
+format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging> %{F#0a81f5}%{F-}
+format-discharging = <animation-discharging> <label-discharging>
 ;format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = " "
+format-full-prefix-foreground = #0a81f5
 ;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = #0a81f5
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+animation-charging-foreground = #3dfc03
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-discharging-0 = " "
+animation-discharging-1 = " "
+animation-discharging-2 = " "
+animation-discharging-3 = " "
+animation-discharging-4 = " "
+animation-discharging-foreground = #0a81f5
+animation-discharging-framerate = 1500
 
 [module/temperature]
 type = internal/temperature
