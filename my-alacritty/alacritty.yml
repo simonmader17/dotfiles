@@ -5,7 +5,7 @@ window:
     y: 10
 font:
   normal:
-    family: Inconsolata
+    family: BlexMono Nerd Font
     style: Regular
   size: 14
 
