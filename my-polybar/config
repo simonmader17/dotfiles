@@ -30,7 +30,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #cc222222
+background = #dd222222
 ;background = ${xrdb:color0}
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
@@ -121,15 +121,6 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/audiodevice]
-type = custom/ipc
-hook-0 = ~/.config/polybar/audiodevice.sh
-initial = 1
-format = <output> 墳
-;format-foreground = #0a81f5
-format-foreground = ${xrdb:color3}
-click-left = bash $HOME/.config/i3/pacmd-switch-sink.sh && polybar-msg hook audiodevice 1
-
 [module/filesystem]
 type = internal/fs
 interval = 25
@@ -141,7 +132,7 @@ mount-2 = /mnt/p
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 ;label-mounted = %{F#0a81f5} %mountpoint%%{F-} %used% / %total% (%percentage_used%%)
 ;label-mounted = %{F#0a81f5} %mountpoint%%{F-} %free% free
-label-mounted =  %mountpoint% %free% free
+label-mounted =  %mountpoint%: %free% free
 label-mounted-foreground = ${xrdb:color1}
 ;label-unmounted = %mountpoint% not mounted
 label-unmounted = ""
@@ -297,8 +288,10 @@ interval = 3.0
 ;format-connected-underline = #55aa55
 ;format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %{F#0a81f5}%{F-} %local_ip%
+;label-connected = %{F#0a81f5}%{F-} %local_ip%
 ;
+label-connected =  %local_ip%
+label-connected-foreground = ${xrdb:color2}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -324,13 +317,23 @@ time-alt = %H:%M:%S
 label =  %time% %date%
 label-foreground = ${xrdb:color9}
 
+[module/audiodevice]
+type = custom/ipc
+hook-0 = ~/.config/polybar/audiodevice.sh
+initial = 1
+format = <output> 墳
+;format-foreground = #0a81f5
+format-foreground = ${xrdb:color3}
+click-left = bash $HOME/.config/i3/pacmd-switch-sink.sh && polybar-msg hook audiodevice 1
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
 ;label-volume = %{F#0a81f5}%{F-} %percentage%%
 label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
+;label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${xrdb:color3}
 
 label-muted =  muted
 label-muted-foreground = #666
@@ -343,13 +346,20 @@ bar-volume-width = 10
 ; bar-volume-foreground-4 = #55aa55
 ; bar-volume-foreground-5 = #f5a70a
 ; bar-volume-foreground-6 = #ff5555
-bar-volume-foreground-0 = #0a81f5
-bar-volume-foreground-1 = #0a81f5
-bar-volume-foreground-2 = #0a81f5
-bar-volume-foreground-3 = #0a81f5
-bar-volume-foreground-4 = #0a81f5
-bar-volume-foreground-5 = #0a81f5
-bar-volume-foreground-6 = #0a81f5
+;bar-volume-foreground-0 = #0a81f5
+;bar-volume-foreground-1 = #0a81f5
+;bar-volume-foreground-2 = #0a81f5
+;bar-volume-foreground-3 = #0a81f5
+;bar-volume-foreground-4 = #0a81f5
+;bar-volume-foreground-5 = #0a81f5
+;bar-volume-foreground-6 = #0a81f5
+bar-volume-foreground-0 = ${xrdb:color3}
+bar-volume-foreground-1 = ${xrdb:color3}
+bar-volume-foreground-2 = ${xrdb:color3}
+bar-volume-foreground-3 = ${xrdb:color3}
+bar-volume-foreground-4 = ${xrdb:color3}
+bar-volume-foreground-5 = ${xrdb:color3}
+bar-volume-foreground-6 = ${xrdb:color3}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 1
