@@ -30,7 +30,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #dd222222
+;background = #cc222222
+background = #aa000000
 ;background = ${xrdb:color0}
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
@@ -80,7 +81,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 modules-left = i3 xwindow
 modules-center = mpd
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu temperature wlan eth battery date powermenu
 enable-ipc = true
 
 tray-position = right
@@ -104,6 +105,7 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+label-foreground = ${xrdb:color7}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -171,12 +173,14 @@ pin-workspaces = true
 
 label-mode-padding = 1
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+;label-mode-background = ${colors.primary}
+label-mode-background = ${xrdb:color2}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+;label-focused-underline= ${colors.primary}
+label-focused-underline = ${xrdb:color2}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -363,6 +367,7 @@ bar-volume-foreground-6 = ${xrdb:color3}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 1
+bar-volume-indicator-foreground = ${xrdb:color7}
 bar-volume-fill = ─
 bar-volume-fill-font = 1
 bar-volume-empty = ─
@@ -452,7 +457,7 @@ format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
-label-foreground = ${xrdb:color8}
+label-foreground = ${xrdb:color3}
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
@@ -460,7 +465,7 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ;ramp-foreground = #0a81f5
-ramp-foreground = ${xrdb:color8}
+ramp-foreground = ${xrdb:color3}
 
 [module/powermenu]
 type = custom/menu
