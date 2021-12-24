@@ -21,7 +21,7 @@ sleep 1
 
 if type "xrandr"; then
 	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-		if [[ "$(xrandr --query | grep $m | cut -d" " -f3)" == *"2560x1440"* ]]; then
+		if [[ "$(xrandr --query | grep $m)" == *"2560x1440"* ]]; then
 			MONITOR=$m polybar --reload top &
 		else
 			MONITOR=$m polybar --reload top-small &
