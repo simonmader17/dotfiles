@@ -470,9 +470,9 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-label-charging-foreground = ${xrdb:color7}
-label-discharging-foreground = ${xrdb:color7}
-label-full-foreground = ${xrdb:color7}
+label-charging-foreground = ${xrdb:color2}
+label-discharging-foreground = ${xrdb:color2}
+label-full-foreground = ${xrdb:color2}
 
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
@@ -488,7 +488,7 @@ ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ;ramp-capacity-foreground = #0a81f5
-ramp-capacity-foreground = ${xrdb:color7}
+ramp-capacity-foreground = ${xrdb:color2}
 
 animation-charging-0 = "  "
 animation-charging-1 = "  "
@@ -496,7 +496,7 @@ animation-charging-2 = "  "
 animation-charging-3 = "  "
 animation-charging-4 = "  "
 ;animation-charging-foreground = #3dfc03
-animation-charging-foreground = ${xrdb:color7}
+animation-charging-foreground = ${xrdb:color2}
 animation-charging-framerate = 750
 
 animation-discharging-0 = " "
@@ -505,7 +505,7 @@ animation-discharging-2 = " "
 animation-discharging-3 = " "
 animation-discharging-4 = " "
 ;animation-discharging-foreground = #0a81f5
-animation-discharging-foreground = ${xrdb:color7}
+animation-discharging-foreground = ${xrdb:color2}
 animation-discharging-framerate = 1500
 
 [module/temperature]
