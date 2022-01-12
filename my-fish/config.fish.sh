@@ -24,6 +24,9 @@ end
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# Set CHROME_EXECUTABLE for flutter
+export CHROME_EXECUTABLE="/usr/bin/brave-browser"
+
 # On Startup
 # wal -R && clear
 wal -Rqe
