@@ -137,3 +137,9 @@ wal -Rqe
 
 # My Aliases
 source ~/my-configs/my-aliases/.aliases
+
+# NordVPN automatically update polybar hook
+nordvpn() {
+	command nordvpn "$@"
+	command polybar-msg hook nordvpn 1 >> /dev/null
+}

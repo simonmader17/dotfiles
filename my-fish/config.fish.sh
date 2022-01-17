@@ -35,4 +35,10 @@ bash ~/.fonts/*.sh
 # My Aliases
 source ~/my-configs/my-aliases/.aliases
 
+# NordVPN automatically update polybar hook
+function nordvpn
+	command nordvpn $argv
+	command polybar-msg hook nordvpn 1 >> /dev/null
+end
+
 # vim:ft=sh

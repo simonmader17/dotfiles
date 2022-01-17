@@ -81,7 +81,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 modules-left = i3 xwindow
 modules-center = mpd
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu temperature wlan eth battery date powermenu
+modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date powermenu
 enable-ipc = true
 
 tray-position = right
@@ -141,7 +141,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 modules-left = i3 xwindow
 modules-center = mpd
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = xbacklight audiodevice pulseaudio memory cpu temperature wlan eth battery date powermenu
+modules-right = xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date powermenu
 enable-ipc = true
 
 tray-position = right
@@ -391,6 +391,14 @@ format = <output> 墳
 ;format-foreground = #0a81f5
 format-foreground = ${xrdb:color3}
 click-left = bash $HOME/.config/i3/pacmd-switch-sink.sh && polybar-msg hook audiodevice 1
+
+[module/nordvpn]
+type = custom/ipc
+hook-0 = ~/.config/polybar/nordvpn.sh
+initial = 1
+format =  <output>
+format-foreground = ${xrdb:color3}
+click-left = polybar-msg hook nordvpn 1
 
 [module/pulseaudio]
 type = internal/pulseaudio
