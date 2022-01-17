@@ -398,7 +398,8 @@ hook-0 = ~/.config/polybar/nordvpn.sh
 initial = 1
 format =  <output>
 format-foreground = ${xrdb:color3}
-click-left = polybar-msg hook nordvpn 1
+# click-left = polybar-msg hook nordvpn 1
+click-left = bash $HOME/.config/polybar/nordvpn_connect.sh && polybar-msg hook nordvpn 1
 
 [module/pulseaudio]
 type = internal/pulseaudio

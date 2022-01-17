@@ -35,6 +35,7 @@ ln -sfv ~/my-configs/my-polybar/config ~/.config/polybar/config
 ln -sfv ~/my-configs/my-polybar/launch.sh ~/.config/polybar/launch.sh
 ln -sfv ~/my-configs/my-polybar/audiodevice.sh ~/.config/polybar/audiodevice.sh
 ln -sfv ~/my-configs/my-polybar/nordvpn.sh ~/.config/polybar/nordvpn.sh
+ln -sfv ~/my-configs/my-polybar/nordvpn_connect.sh ~/.config/polybar/nordvpn_connect.sh
 
 mkdir -pv ~/.config/ranger
 ln -sfv ~/my-configs/my-ranger/rc.conf ~/.config/ranger/rc.conf
