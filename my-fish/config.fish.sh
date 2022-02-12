@@ -41,4 +41,7 @@ function nordvpn
 	command polybar-msg hook nordvpn 1 >> /dev/null
 end
 
+# Load nvm config
+bass source ~/.nvm/nvm.sh
+
 # vim:ft=sh
