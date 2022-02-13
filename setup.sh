@@ -2,21 +2,29 @@
 
 mkdir -pv ~/.config
 
+# Alacritty
 mkdir -pv ~/.config/alacritty
-ln -sfv ~/my-configs/my-alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -sfv ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-ln -sfv ~/my-configs/my-bashrc/.bashrc ~/.bashrc
+# .bashrc
+ln -sfv ~/dotfiles/bashrc/.bashrc ~/.bashrc
 
-mkdir -pv ~/.config/fish
-ln -sfv ~/my-configs/my-fish/config.fish.sh ~/.config/fish/config.fish
+# fish
+mkdir -pv ~/.config/fish/functions
+ln -sfv ~/dotfiles/fish/config.fish.sh ~/.config/fish/config.fish
+ln -sfv ~/dotfiles/fish/nvm.fish ~/.config/fish/functions/nvm.fish
 fish_vi_key_bindings
 
-git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/bumblebee-status
+# My aliases for bash and fish
+mkdir -pv ~/.config/aliases
+ln -sfv ~/dotfiles/aliases/.aliases ~/.config/aliases/.aliases
 
+# i3
 mkdir -pv ~/.config/i3
-ln -sfv ~/my-configs/my-i3/i3.config ~/.config/i3/config
-ln -sfv ~/my-configs/my-i3/pacmd-switch-sink.sh ~/.config/i3/pacmd-switch-sink.sh
+ln -sfv ~/dotfiles/i3/i3.config ~/.config/i3/config
+ln -sfv ~/dotfiles/i3/pacmd-switch-sink.sh ~/.config/i3/pacmd-switch-sink.sh
 
+# Polybar + required fonts
 git clone https://github.com/gabrielelana/awesome-terminal-fonts ~/Downloads/awesome-terminal-fonts
 mkdir -pv ~/.fonts
 cp -fv ~/Downloads/awesome-terminal-fonts/build/*.ttf ~/.fonts
@@ -28,20 +36,24 @@ fc-cache -fv ~/.fonts
 git clone https://github.com/powerline/fonts.git ~/Downloads/powerline-fonts
 source ~/Downloads/powerline-fonts/install.sh
 
-ln -sfv ~/my-configs/my-picom/picom.conf ~/.config/picom.conf
-
 mkdir -pv ~/.config/polybar
-ln -sfv ~/my-configs/my-polybar/config ~/.config/polybar/config
-ln -sfv ~/my-configs/my-polybar/launch.sh ~/.config/polybar/launch.sh
-ln -sfv ~/my-configs/my-polybar/audiodevice.sh ~/.config/polybar/audiodevice.sh
-ln -sfv ~/my-configs/my-polybar/nordvpn.sh ~/.config/polybar/nordvpn.sh
-ln -sfv ~/my-configs/my-polybar/nordvpn_connect.sh ~/.config/polybar/nordvpn_connect.sh
+ln -sfv ~/dotfiles/polybar/config ~/.config/polybar/config
+ln -sfv ~/dotfiles/polybar/launch.sh ~/.config/polybar/launch.sh
+ln -sfv ~/dotfiles/polybar/audiodevice.sh ~/.config/polybar/audiodevice.sh
+ln -sfv ~/dotfiles/polybar/nordvpn.sh ~/.config/polybar/nordvpn.sh
+ln -sfv ~/dotfiles/polybar/nordvpn_connect.sh ~/.config/polybar/nordvpn_connect.sh
 
+# Picom
+ln -sfv ~/dotfiles/picom/picom.conf ~/.config/picom.conf
+
+# Ranger
 mkdir -pv ~/.config/ranger
-ln -sfv ~/my-configs/my-ranger/rc.conf ~/.config/ranger/rc.conf
-ln -sfv ~/my-configs/my-ranger/scope.sh ~/.config/ranger/scope.sh
+ln -sfv ~/dotfiles/ranger/rc.conf ~/.config/ranger/rc.conf
+ln -sfv ~/dotfiles/ranger/scope.sh ~/.config/ranger/scope.sh
 
+# My vim snippets
 mkdir -pv ~/.vim/snippets
-ln -sfv ~/my-configs/my-snippets/_.snippets ~/.vim/snippets/_.snippets
+ln -sfv ~/dotfiles/snippets/_.snippets ~/.vim/snippets/_.snippets
 
-ln -sfv ~/my-configs/my-vimrc/.vimrc-linux ~/.vimrc
+# .vimrc
+ln -sfv ~/dotfiles/vimrc/.vimrc ~/.vimrc

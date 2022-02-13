@@ -33,7 +33,7 @@ wal -Rqe
 bash ~/.fonts/*.sh
 
 # My Aliases
-source ~/my-configs/my-aliases/.aliases
+source ~/.config/aliases/.aliases
 
 # NordVPN automatically update polybar hook
 function nordvpn
