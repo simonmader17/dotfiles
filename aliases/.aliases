@@ -8,7 +8,7 @@ alias la='exa -a --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
 
-alias cat='batcat --paging=never --style=grid'
+alias cat='bat --paging=never --style=grid'
 
 alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
