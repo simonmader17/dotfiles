@@ -17,4 +17,6 @@ Make sure, you've cloned this repository into your home directory, and then exec
 ~/dotfiles $ ./setup.sh
 ```
 
+BE AWARE! This will overwrite a lot of your config files in your ~/.config folder!
+
 Enjoy!
