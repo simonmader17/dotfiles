@@ -7,5 +7,5 @@ then
 	command nordvpn disconnect
 elif [[ $status == *"Disconnected"* ]]
 then
-	command nordvpn connect
+	command nordvpn connect United_States
 fi
