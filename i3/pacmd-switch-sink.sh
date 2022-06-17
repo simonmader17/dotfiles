@@ -1,16 +1,30 @@
-#!/bin/bash
+#!/usr/bin/fish
 
-SPEAKER_INDEX=$(pacmd list-sinks | grep -m1 -B1 "pci.*analog-stereo" | grep "index" | cut -d":" -f2 | cut -d" " -f2)
-HEADSET_INDEX=$(pacmd list-sinks | grep -m1 -B1 "usb-Logitech_G433_Gaming_Headset" | grep "index" | cut -d":" -f2 | cut -d" " -f2)
+set -l sinks
+set -l selectedSink
+set -l selectedIndex
 
-echo $SPEAKER_INDEX
-echo $HEADSET_INDEX
+set -l i 1
+for line in (pacmd list-sinks | grep "index");
+	echo $line
+	set -a sinks (echo $line | cut -d":" -f2 | cut -d" " -f2)
+	if string match "*\**" $line;
+		set selectedSink (echo $line | cut -d":" -f2 | cut -d" " -f2)
+		set selectedIndex $i
+	end
+	set -l i (math $i+1)
+end
 
-if pacmd list-sinks | grep -m1 -B1 "pci.*analog-stereo" | grep -q "* index";
-then
-	# If speaker is selected, switch to headset
-	pacmd set-default-sink $HEADSET_INDEX
-else
-	# Else, switch to speaker
-	pacmd set-default-sink $SPEAKER_INDEX
-fi
+echo $sinks
+echo $selectedSink
+set -l sinksCount (count $sinks)
+
+set -l switchToSink
+if [ $selectedIndex -eq $sinksCount ];
+	set switchToSink $sinks[1]
+else;
+	set switchToSink $sinks[(math $selectedIndex+1)]
+end
+
+echo $switchToSink
+pacmd set-default-sink $switchToSink
