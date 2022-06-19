@@ -385,7 +385,7 @@ label-foreground = ${xrdb:color9}
 
 [module/audiodevice]
 type = custom/ipc
-hook-0 = ~/.config/polybar/audiodevice.sh
+hook-0 = ~/.config/polybar/audiodevice.sh 2> /dev/null
 initial = 1
 format = <output> 墳
 ;format-foreground = #0a81f5
