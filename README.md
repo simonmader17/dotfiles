@@ -1,5 +1,7 @@
 # dotfiles :paintbrush:
 
+![Desktop Screenshot](desktop.png)
+
 ## prerequisites
 
 * i3-gaps, a fork of i3wm, a tiling window manager for X11: [github.com/Airblader/i3](https://github.com/Airblader/i3)
