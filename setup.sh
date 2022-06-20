@@ -13,7 +13,7 @@ ln -sfv ~/dotfiles/bashrc/.bashrc ~/.bashrc
 mkdir -pv ~/.config/fish/functions
 ln -sfv ~/dotfiles/fish/config.fish.sh ~/.config/fish/config.fish
 ln -sfv ~/dotfiles/fish/nvm.fish ~/.config/fish/functions/nvm.fish
-fish_vi_key_bindings
+fish -c fish_vi_key_bindings
 
 # My aliases for bash and fish
 mkdir -pv ~/.config/aliases
@@ -29,6 +29,12 @@ git clone https://github.com/gabrielelana/awesome-terminal-fonts ~/Downloads/awe
 mkdir -pv ~/.fonts
 cp -fv ~/Downloads/awesome-terminal-fonts/build/*.ttf ~/.fonts
 cp -fv ~/Downloads/awesome-terminal-fonts/build/*.sh ~/.fonts
+cp -fv ~/dotfiles/fonts/FiraCode/*.ttf ~/.fonts
+cp -fv ~/dotfiles/fonts/FiraCode/*.otf ~/.fonts
+cp -fv ~/dotfiles/fonts/FiraCodeiScript/*.ttf ~/.fonts
+cp -fv ~/dotfiles/fonts/FiraCodeiScript/*.otf ~/.fonts
+cp -fv ~/dotfiles/fonts/IBMPlexMono/*.ttf ~/.fonts
+cp -fv ~/dotfiles/fonts/IBMPlexMono/*.otf ~/.fonts
 mkdir -pv ~/.config/fontconfig/conf.d
 cp -fv ~/Downloads/awesome-terminal-fonts/config/* ~/.config/fontconfig/conf.d
 fc-cache -fv ~/.fonts
