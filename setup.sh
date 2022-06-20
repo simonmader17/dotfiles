@@ -2,11 +2,7 @@
 
 mkdir -pv ~/.config
 
-# GTK+ themes and icons
-mkdir -pv ~/.themes
-mkdir -pv ~/.icons
-cp -fvr ~/dotfiles/themes/* ~/.themes/
-cp -fvr ~/dotfiles/icons/* ~/.icons/
+# GTK+ config
 ln -sfv ~/dotfiles/gtkrc-2.0/.gtkrc-2.0 ~/.gtkrc-2.0
 
 # Alacritty

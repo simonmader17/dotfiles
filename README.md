@@ -5,6 +5,10 @@
 * i3-gaps, a fork of i3wm, a tiling window manager for X11: [github.com/Airblader/i3](https://github.com/Airblader/i3)
   * [Build and installation guide](https://github.com/Airblader/i3/wiki/Building-from-source)
 * autotiling, a script that uses the i3ipc-python library to switch the layout splith/splitv depending on the currently focused window dimensions: [github.com/nwg-piotr/autotiling](https://github.com/nwg-piotr/autotiling)
+* GTK+ themes and icons:
+  * [Sierra Gtk Theme](https://github.com/vinceliuice/Sierra-gtk-theme)
+  * [Mojave Gtk Theme](https://github.com/vinceliuice/Mojave-gtk-theme)
+  * [Apple Cursor](https://github.com/ful1e5/apple_cursor)
 * BlexMono & FiraCode Nerd Fonts: [www.nerdfonts.com](https://www.nerdfonts.com/font-downloads)
 * exa, a modern replacement for ls: [github.com/ogham/exa](https://github.com/ogham/exa)
 * bat, a cat clone with wings: [github.com/sharkdp/bat](https://github.com/sharkdp/bat)
