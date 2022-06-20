@@ -2,6 +2,12 @@
 
 mkdir -pv ~/.config
 
+# GTK+ themes and icons
+mkdir -pv ~/.themes
+mkdir -pv ~/.icons
+cp -fvr ~/dotfiles/themes/* ~/.themes/
+cp -fvr ~/dotfiles/icons/* ~/.icons/
+
 # Alacritty
 mkdir -pv ~/.config/alacritty
 ln -sfv ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
