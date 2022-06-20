@@ -7,6 +7,7 @@ mkdir -pv ~/.themes
 mkdir -pv ~/.icons
 cp -fvr ~/dotfiles/themes/* ~/.themes/
 cp -fvr ~/dotfiles/icons/* ~/.icons/
+ln -sfv ~/dotfiles/gtkrc-2.0/.gtkrc-2.0 ~/.gtkrc-2.0
 
 # Alacritty
 mkdir -pv ~/.config/alacritty
