@@ -81,7 +81,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 modules-left = i3 xwindow
 modules-center = mpd
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date powermenu
+modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date
 enable-ipc = true
 
 tray-position = right
@@ -141,7 +141,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 modules-left = i3 xwindow
 modules-center = mpd
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date powermenu
+modules-right = xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date 
 enable-ipc = true
 
 tray-position = right
