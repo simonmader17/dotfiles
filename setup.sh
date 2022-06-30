@@ -26,6 +26,7 @@ ln -sfv ~/dotfiles/aliases/.aliases ~/.config/aliases/.aliases
 mkdir -pv ~/.config/i3
 ln -sfv ~/dotfiles/i3/i3.config ~/.config/i3/config
 ln -sfv ~/dotfiles/i3/pacmd-switch-sink.sh ~/.config/i3/pacmd-switch-sink.sh
+ln -sfv ~/dotfiles/i3/pactl-switch-sink.sh ~/.config/i3/pactl-switch-sink.sh
 
 # Polybar + required fonts
 git clone https://github.com/gabrielelana/awesome-terminal-fonts ~/Downloads/awesome-terminal-fonts

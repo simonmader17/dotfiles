@@ -392,7 +392,7 @@ initial = 1
 format = <output> 墳
 ;format-foreground = #0a81f5
 format-foreground = ${xrdb:color3}
-click-left = fish $HOME/.config/i3/pacmd-switch-sink.sh && polybar-msg hook audiodevice 1
+click-left = fish $HOME/.config/i3/pactl-switch-sink.sh && polybar-msg hook audiodevice 1
 
 [module/nordvpn]
 type = custom/ipc
