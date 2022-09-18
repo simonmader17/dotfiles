@@ -1,0 +1,17 @@
+{
+  // codelens
+  "codeLens.enable": true,
+  "java.referencesCodeLens.enabled": true,
+  "java.completion.enabled": true,
+
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "java",
+    "javascript",
+    "typescript",
+    "html",
+    "json"
+  ],
+  "hover.target": "float"
+}

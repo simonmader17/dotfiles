@@ -105,7 +105,6 @@ set foldmethod=indent
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'garbas/vim-snipmate'
@@ -115,6 +114,15 @@ Plug 'tomtom/tlib_vim'
 " end of dependencies
 Plug 'mboughaba/i3config.vim'
 Plug 'raimondi/delimitmate'
+
+" vim-coc
+"" Stable version of coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" Keeping up to date with master
+"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 

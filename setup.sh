@@ -67,3 +67,10 @@ ln -sfv ~/dotfiles/snippets/_.snippets ~/.vim/snippets/_.snippets
 
 # .vimrc
 ln -sfv ~/dotfiles/vimrc/.vimrc ~/.vimrc
+
+# nvim
+mkdir -pv ~/.config/nvim/plug-config
+ln -sfv ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -sfv ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -sfv ~/dotfiles/nvim/plug-config/coc.vim ~/.config/nvim/plug-config/coc.vim
+ln -sfv ~/dotfiles/nvim/treesitter.lua ~/.config/nvim/treesitter.lua
