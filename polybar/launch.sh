@@ -25,6 +25,7 @@ if type "xrandr"; then
 			MONITOR=$m polybar --reload top &
 		else
 			MONITOR=$m polybar --reload top-small &
+			MONITOR=$m polybar --reload bottom-small &
 		fi
 	done
 else
