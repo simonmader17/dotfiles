@@ -7,6 +7,7 @@
 
 syntax on
 colorscheme delek
+highlight Comment cterm=italic
 
 " All mappings
 " inoremap " ""<left>

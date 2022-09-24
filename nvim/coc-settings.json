@@ -1,7 +1,7 @@
 {
   // codelens
   "codeLens.enable": true,
-  "java.referencesCodeLens.enabled": true,
+  "java.referencesCodeLens.enabled": false,
   "java.completion.enabled": true,
 
   // autoformat
