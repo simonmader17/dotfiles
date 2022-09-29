@@ -8,6 +8,7 @@
 syntax on
 colorscheme delek
 highlight Comment cterm=italic
+highlight SignColumn ctermbg=none
 
 " All mappings
 " inoremap " ""<left>
