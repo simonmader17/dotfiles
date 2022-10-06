@@ -126,6 +126,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
 
+" VimTeX
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 filetype plugin indent on
