@@ -31,7 +31,7 @@ autocmd FileType java imap <F5> <ESC>:w<CR>:!java %<CR>
 
 " LaTeX mappings
 let g:tex_flavor = "latex"
-autocmd FileType tex inoremap -> $\to$
+" autocmd FileType tex inoremap -> $\to$
 
 " Java execute single file
 autocmd FileType java map <F5> :w<CR>:!java %<CR>
