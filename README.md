@@ -17,7 +17,8 @@
 * oh-my-fish, the fish shell framework: [github.com/oh-my-fish/oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 * nvm, Node Version Manager: [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 * pywal, a tool that generates a color palette from the dominant colors in an image: [github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal)
-* picom, a compositor for X, and a fork of Compton: [github.com/yshui/picom](https://github.com/yshui/picom)
+# * picom, a compositor for X, and a fork of Compton: [github.com/yshui/picom](https://github.com/yshui/picom)
+* picom, a compositor for X, and a fork of Compton: [github.com/ibhagwan/picom](https://github.com/ibhagwan/picom)
 * feh, a light-weight, configurable and versatile image viewer: [github.com/derf/feh](https://github.com/derf/feh)
 
 ## setup
