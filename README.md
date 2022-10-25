@@ -2,6 +2,8 @@
 
 ![Desktop Screenshot](desktop.png)
 
+![Desktop Screenshot 2](desktop-2.png)
+
 ## prerequisites
 
 * i3-gaps, a fork of i3wm, a tiling window manager for X11: [github.com/Airblader/i3](https://github.com/Airblader/i3)
@@ -17,7 +19,6 @@
 * oh-my-fish, the fish shell framework: [github.com/oh-my-fish/oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 * nvm, Node Version Manager: [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 * pywal, a tool that generates a color palette from the dominant colors in an image: [github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal)
-<!-- * picom, a compositor for X, and a fork of Compton: [github.com/yshui/picom](https://github.com/yshui/picom) -->
 * picom, a compositor for X, and a fork of Compton: [github.com/ibhagwan/picom](https://github.com/ibhagwan/picom)
 * feh, a light-weight, configurable and versatile image viewer: [github.com/derf/feh](https://github.com/derf/feh)
 
