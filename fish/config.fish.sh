@@ -49,3 +49,8 @@ bass source ~/.nvm/nvm.sh
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# react-native
+set --export ANDROID_SDK_ROOT "$HOME/Android/Sdk"
+set --export PATH "$PATH:$ANDROID_SDK_ROOT/emulator"
+set --export PATH "$PATH:$ANDROID_SDK_ROOT/platform-tools"
