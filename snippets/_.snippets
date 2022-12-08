@@ -1,3 +1,21 @@
+snippet bf
+	\textbf{${1:BOLD TEXT}}${0}
+
+snippet it
+	\textit{${1:ITALIC TEXT}}${0}
+
+snippet qs
+	\subsection{Aufgabe ${1:NR}}
+
+	\qs{Aufgabe $1}{
+		\includegraphics[width=\textwidth]{ue-${2}-$1.png}
+	}
+
+	${0}
+
+snippet inc
+	\includegraphics[width=${1:\textwidth}]{${2}}${0}
+
 snippet psvm
 	public static void main(String [] args) {
 		${0}
