@@ -4,6 +4,9 @@ snippet bf
 snippet it
 	\textit{${1:ITALIC TEXT}}${0}
 
+snippet tt
+	\texttt{${1:TYPEWRITTEN TEXT}}${0}
+
 snippet qs
 	\subsection{Aufgabe ${1:NR}}
 
@@ -12,6 +15,11 @@ snippet qs
 	}
 
 	${0}
+
+snippet pf
+	\pf{${1}}{
+		${0}
+	}
 
 snippet inc
 	\includegraphics[width=${1:\textwidth}]{${2}}${0}
