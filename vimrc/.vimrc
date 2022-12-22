@@ -57,9 +57,21 @@ autocmd FileType tex imap <F6> <ESC>:execute "!xdg-open ".substitute(@%, ".tex",
 autocmd FileType markdown map <F5> :w<CR>:execute "!pandoc --verbose -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>
 autocmd FileType markdown imap <F5> <ESC>:w<CR>:execute "!pandoc --verbose -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>a
 
+" Markdown save, compile with marp
+autocmd FileType markdown map <S-F5> :w<CR>:!marp --pdf %<CR><CR>
+autocmd FileType markdown imap <S-F5> <ESC>:w<CR>:!marp --pdf %<CR><CR>a
+
+" Markdown save, compile with marp to html
+autocmd FileType markdown map <C-S-F5> :w<CR>:!marp %<CR><CR>
+autocmd FileType markdown imap <C-S-F5> <ESC>:w<CR>:!marp %<CR><CR>a
+
 " Markdown open pdf
 autocmd FileType markdown map <F6> :execute "!xdg-open ".substitute(@%, ".md", ".pdf", "")." &"<CR><CR>
 autocmd FileType markdown imap <F6> <ESC>:execute "!xdg-open ".substitute(@%, ".md", ".pdf", "")." &"<CR><CR>a
+
+" Markdown open html
+autocmd FileType markdown map <S-F6> :execute "!xdg-open ".substitute(@%, ".md", ".html", "")." &"<CR><CR>
+autocmd FileType markdown imap <S-F6> <ESC>:execute "!xdg-open ".substitute(@%, ".md", ".html", "")." &"<CR><CR>a
 
 " Markdown to HTML save and compile
 autocmd FileType markdown map <F7> :w<CR>:execute "!pandoc --verbose -f markdown -t html -o ".substitute(@%, ".md", ".html", "")." ".@%." -c styles.css -s"<CR><CR>

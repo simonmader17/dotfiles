@@ -22,10 +22,10 @@ function fish_greeting
 	fish_logo
 end
 
-export PATH="$HOME/.local/bin:$PATH"
+set --export PATH "$HOME/.local/bin:$PATH"
 
 # Set CHROME_EXECUTABLE for flutter
-export CHROME_EXECUTABLE="/usr/bin/brave-browser"
+set --export CHROME_EXECUTABLE "/usr/bin/brave-browser"
 
 # On Startup
 # wal -R && clear
@@ -54,3 +54,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 set --export ANDROID_SDK_ROOT "$HOME/Android/Sdk"
 set --export PATH "$PATH:$ANDROID_SDK_ROOT/emulator"
 set --export PATH "$PATH:$ANDROID_SDK_ROOT/platform-tools"
+
+# CHROME_PATH for marp
+set --export CHROME_PATH "/usr/bin/brave-browser"
