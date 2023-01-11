@@ -447,7 +447,7 @@ time-alt = %H:%M:%S
 
 ;label = %{F#0a81f5}%{F-} %time% %date%
 label =  %time% %date%
-label-foreground = ${xrdb:color9}
+label-foreground = ${xrdb:color2}
 
 [module/audiodevice]
 type = custom/ipc
