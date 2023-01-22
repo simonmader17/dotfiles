@@ -54,8 +54,8 @@ autocmd FileType tex map <F6> :execute "!xdg-open ".substitute(@%, ".tex", ".pdf
 autocmd FileType tex imap <F6> <ESC>:execute "!xdg-open ".substitute(@%, ".tex", ".pdf", "")." &"<CR><CR>a
 
 " Markdown save, compile
-autocmd FileType markdown map <F5> :w<CR>:execute "!pandoc --verbose -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>
-autocmd FileType markdown imap <F5> <ESC>:w<CR>:execute "!pandoc --verbose -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>a
+autocmd FileType markdown map <F5> :w<CR>:execute "!pandoc --verbose --template eisvogel -f markdown-implicit_figures -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>
+autocmd FileType markdown imap <F5> <ESC>:w<CR>:execute "!pandoc --verbose --template eisvogel -f markdown-implicit_figures -o ".substitute(@%, ".md", ".pdf", "")." ".@%<CR><CR>a
 
 " Markdown save, compile with marp
 autocmd FileType markdown map <S-F5> :w<CR>:!marp --pdf %<CR><CR>
