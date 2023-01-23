@@ -74,3 +74,7 @@ ln -sfv ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -sfv ~/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -sfv ~/dotfiles/nvim/plug-config/coc.vim ~/.config/nvim/plug-config/coc.vim
 ln -sfv ~/dotfiles/nvim/treesitter.lua ~/.config/nvim/treesitter.lua
+
+# Pandoc templatex
+mkdir -pv ~/.local/share/pandoc/templates
+ln -sfv ~/dotfiles/pandoc/templates/eisvogel.latex ~/.local/share/pandoc/templates/eisvogel.latex
