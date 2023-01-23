@@ -92,6 +92,10 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+set breakindent
+set wrap
+set linebreak
+set nolist
 
 " Effective tab while editing
 set softtabstop=4
