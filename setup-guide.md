@@ -1,5 +1,11 @@
 # My ThinkPad T430 Pop OS 22.04 Setup Guide
 
+## Basic programs
+
+```
+sudo apt install alacritty fish exa bat vim imagemagick feh
+```
+
 ## LaTeX
 
 ```
@@ -30,10 +36,4 @@ cd ~
 git clone git@github.com:simonmader17/dotfiles.git
 cd dotfiles
 sudo bash ./setup.sh
-```
-
-## Other programs
-
-```
-sudo apt install alacritty fish exa bat vim imagemagick
 ```
