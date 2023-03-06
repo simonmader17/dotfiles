@@ -60,3 +60,11 @@ set --export CHROME_PATH "/usr/bin/brave-browser"
 
 # miniconda
 set --export PATH "$HOME/miniconda3/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/simon/miniconda3/bin/conda
+    eval /home/simon/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
+
