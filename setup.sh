@@ -78,3 +78,7 @@ ln -sfv ~/dotfiles/nvim/treesitter.lua ~/.config/nvim/treesitter.lua
 # Pandoc templatex
 mkdir -pv ~/.local/share/pandoc/templates
 ln -sfv ~/dotfiles/pandoc/templates/eisvogel.latex ~/.local/share/pandoc/templates/eisvogel.latex
+
+# .vim colors
+mkdir -pv ~/.vim/colors
+ln -sfv ~/dotfiles/vim/colors/delek.vim ~/.vim/colors/delek.vim
