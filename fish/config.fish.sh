@@ -57,3 +57,6 @@ set --export PATH "$PATH:$ANDROID_SDK_ROOT/platform-tools"
 
 # CHROME_PATH for marp
 set --export CHROME_PATH "/usr/bin/brave-browser"
+
+# miniconda
+set --export PATH "$HOME/miniconda3/bin:$PATH"
