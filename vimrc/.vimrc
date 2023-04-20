@@ -39,13 +39,13 @@ autocmd FileType java map <F5> :w<CR>:!java %<CR>
 autocmd FileType java imap <F5> <ESC>:w<CR>:!java %<CR>
 
 " LaTeX save, compile
-autocmd FileType tex map <F4> :w<CR>:!lualatex %<CR><CR>
-autocmd FileType tex imap <F4> <ESC>:w<CR>:!lualatex %<CR><CR>a
-autocmd FileType tex map <F5> :w<CR>:!pdflatex %<CR><CR>
-autocmd FileType tex imap <F5> <ESC>:w<CR>:!pdflatex %<CR><CR>a
+autocmd FileType tex map <F4> :w<CR>:!lualatex --shell-escape %<CR><CR>
+autocmd FileType tex imap <F4> <ESC>:w<CR>:!lualatex --shell-escape %<CR><CR>a
+autocmd FileType tex map <F5> :w<CR>:!pdflatex --shell-escape %<CR><CR>
+autocmd FileType tex imap <F5> <ESC>:w<CR>:!pdflatex --shell-escape %<CR><CR>a
 " LaTeX save and compile with biber
-autocmd FileType tex map <S-F5> :w<CR>:!pdflatex %<CR><CR>:execute "!biber ".substitute(@%, "[.]tex", "", "")<CR><CR>:!pdflatex %<CR><CR>
-autocmd FileType tex imap <S-F5> <ESC>:w<CR>:!pdflatex %<CR><CR>:execute "!biber ".substitute(@%, "[.]tex", "", "")<CR><CR>:!pdflatex %<CR><CR>a
+autocmd FileType tex map <S-F5> :w<CR>:!pdflatex --shell-escape %<CR><CR>:execute "!biber ".substitute(@%, "[.]tex", "", "")<CR><CR>:!pdflatex %<CR><CR>
+autocmd FileType tex imap <S-F5> <ESC>:w<CR>:!pdflatex --shell-escape %<CR><CR>:execute "!biber ".substitute(@%, "[.]tex", "", "")<CR><CR>:!pdflatex %<CR><CR>a
 
 " LaTeX Diplomarbeit textparts compile
 " autocmd BufRead,BufNewFile */textparts/* map <F4> :w<CR>:!cd ..<CR>:!pdflatex Diplomarbeit.tex<CR><CR>:!cd ./textparts<CR>
