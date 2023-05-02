@@ -80,8 +80,8 @@ font-0 = FiraCode Nerd Font:size=11;1
 
 modules-left = i3 xwindow
 modules-center = mpd
-;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight audiodevice pulseaudio memory gpu cpu temperature nordvpn wlan eth battery date
+;modules-right = fs-root fs-d fs-f fs-p xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
+modules-right = fs-root fs-d fs-f fs-p xbacklight audiodevice pulseaudio memory gpu cpu temperature nordvpn wlan eth battery date
 enable-ipc = true
 
 tray-position = right
@@ -140,7 +140,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 
 modules-left = i3 xwindow
 modules-center = mpd
-;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
+;modules-right = fs-root fs-d fs-f fs-p xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
 modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature eth battery date 
 enable-ipc = true
 
@@ -201,9 +201,9 @@ font-0 = FiraCode Nerd Font:size=11;1
 
 ; modules-left = i3 xwindow
 ; modules-center = mpd
-;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
+;modules-right = fs-root fs-d fs-f fs-p xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
 ; modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature nordvpn wlan eth battery date 
-modules-left = filesystem
+modules-left = fs-root fs-d fs-f fs-p
 ; modules-center = audiodevice pulseaudio
 modules-right = nordvpn wlan
 enable-ipc = true
@@ -251,9 +251,10 @@ label-indicator-underline = ${colors.secondary}
 type = internal/fs
 interval = 25
 
-mount-0 = /
-mount-1 = /mnt/d
-mount-2 = /mnt/p
+;mount-0 = /
+;mount-1 = /mnt/d
+;mount-2 = /mnt/f
+;mount-3 = /mnt/p
 
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 ;label-mounted = %{F#0a81f5} %mountpoint%%{F-} %used% / %total% (%percentage_used%%)
@@ -263,6 +264,26 @@ label-mounted-foreground = ${xrdb:color1}
 ;label-unmounted = %mountpoint% not mounted
 label-unmounted = ""
 ;label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/fs-root]
+inherit = module/filesystem
+mount-0 = /
+label-mounted =  /: %free% free
+
+[module/fs-d]
+inherit = module/filesystem
+mount-0 = /mnt/d
+label-mounted =  d: %free% free
+
+[module/fs-f]
+inherit = module/filesystem
+mount-0 = /mnt/f
+label-mounted =  f: %free% free
+
+[module/fs-p]
+inherit = module/filesystem
+mount-0 = /mnt/p
+label-mounted =  p: %free% free
 
 [module/bspwm]
 type = internal/bspwm
@@ -499,7 +520,8 @@ format-foreground = ${xrdb:color2}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+;format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 ;label-volume = %{F#0a81f5}%{F-} %percentage%%
 label-volume = %percentage%%
 ;label-volume-foreground = ${root.foreground}
