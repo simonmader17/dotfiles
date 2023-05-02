@@ -80,8 +80,8 @@ font-0 = FiraCode Nerd Font:size=11;1
 
 modules-left = i3 xwindow
 modules-center = mpd
-;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date
+;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight audiodevice pulseaudio memory gpu cpu temperature nordvpn wlan eth battery date
 enable-ipc = true
 
 tray-position = right
@@ -140,8 +140,8 @@ font-0 = FiraCode Nerd Font:size=11;1
 
 modules-left = i3 xwindow
 modules-center = mpd
-;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = xbacklight audiodevice pulseaudio memory cpu temperature eth battery date 
+;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
+modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature eth battery date 
 enable-ipc = true
 
 tray-position = right
@@ -201,8 +201,8 @@ font-0 = FiraCode Nerd Font:size=11;1
 
 ; modules-left = i3 xwindow
 ; modules-center = mpd
-;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-; modules-right = xbacklight audiodevice pulseaudio memory cpu temperature nordvpn wlan eth battery date 
+;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
+; modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature nordvpn wlan eth battery date 
 modules-left = filesystem
 ; modules-center = audiodevice pulseaudio
 modules-right = nordvpn wlan
@@ -374,6 +374,27 @@ format-prefix-foreground = ${colors.foreground-alt}
 label =  %percentage:2%%
 label-foreground = ${xrdb:color5}
 
+[module/temperature]
+type = internal/temperature
+thermal-zone = 1
+warn-temperature = 60
+
+format = <ramp> <label>
+; format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-foreground = ${xrdb:color5}
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+;ramp-foreground = #0a81f5
+ramp-foreground = ${xrdb:color5}
+
 [module/memory]
 type = internal/memory
 interval = 2
@@ -467,6 +488,13 @@ format =  <output>
 format-foreground = ${xrdb:color3}
 # click-left = polybar-msg hook nordvpn 1
 click-left = bash $HOME/.config/polybar/nordvpn_connect.sh && polybar-msg hook nordvpn 1
+
+[module/gpu]
+type = custom/script
+exec = ~/.config/polybar/gpu.sh
+interval = 1
+format-prefix = " "
+format-foreground = ${xrdb:color2}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -583,27 +611,6 @@ animation-discharging-4 = " "
 ;animation-discharging-foreground = #0a81f5
 animation-discharging-foreground = ${xrdb:color2}
 animation-discharging-framerate = 2500
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 1
-warn-temperature = 60
-
-format = <ramp> <label>
-; format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-foreground = ${xrdb:color3}
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-;ramp-foreground = #0a81f5
-ramp-foreground = ${xrdb:color3}
 
 [module/powermenu]
 type = custom/menu

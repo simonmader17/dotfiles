@@ -52,6 +52,7 @@ ln -sfv ~/dotfiles/polybar/launch.sh ~/.config/polybar/launch.sh
 ln -sfv ~/dotfiles/polybar/audiodevice.sh ~/.config/polybar/audiodevice.sh
 ln -sfv ~/dotfiles/polybar/nordvpn.sh ~/.config/polybar/nordvpn.sh
 ln -sfv ~/dotfiles/polybar/nordvpn_connect.sh ~/.config/polybar/nordvpn_connect.sh
+ln -sfv ~/dotfiles/polybar/gpu.sh ~/.config/polybar/gpu.sh
 
 # Picom
 ln -sfv ~/dotfiles/picom/picom.conf ~/.config/picom.conf
