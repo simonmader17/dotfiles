@@ -19,7 +19,8 @@ if status is-interactive
 end
 
 function fish_greeting
-	fish_logo
+	# fish_logo
+	python3 /home/simon/scripts/ascii.py | lolcat
 end
 
 set --export PATH "$HOME/.local/bin:$PATH"
