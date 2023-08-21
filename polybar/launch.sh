@@ -19,19 +19,21 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 sleep 1
 
-monitors=$(xrandr --query | grep " connected" | cut -d" " -f1)
-echo $monitors
+primary=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
+others=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
+monitors=(${primary[@]} ${others[@]})
+echo ${monitors[@]}
 
 largeMonitorExists=false
 
 if type "xrandr"; then
 	# Check if large monitor exists
-	for m in $monitors; do
+	for m in ${monitors[@]}; do
 		if [[ "$(xrandr --query | grep $m)" == *"2560x1440"* ]]; then
 			largeMonitorExists=true
 		fi
 	done
-	for m in $monitors; do
+	for m in ${monitors[@]}; do
 		if [[ "$(xrandr --query | grep $m)" == *"2560x1440"* ]]; then
 			MONITOR=$m polybar --reload top &
 		else
