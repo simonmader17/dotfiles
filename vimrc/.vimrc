@@ -155,7 +155,12 @@ Plug 'nvim-treesitter/nvim-treesitter'
 " VimTeX
 Plug 'lervag/vimtex'
 
+" Code::Stats
+Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
+
 call plug#end()
+
+source .secrets
 
 filetype plugin indent on
 
@@ -199,6 +204,13 @@ set laststatus=2
 set noshowmode
 let g:lightline = {
 	\ 'colorscheme': 'ayu_dark',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'readonly', 'filename', 'modified', 'codestats' ] ]
+    \ },
+    \ 'component': {
+    \   'codestats': '%{CodeStatsXp()}'
+    \ },
 	\ }
 
 autocmd VimEnter * call SetupLightlineColors()
