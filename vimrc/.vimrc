@@ -160,7 +160,9 @@ Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
 call plug#end()
 
-source .secrets
+" Content of .secrets:
+" let g:codestats_api_key = 'YOUR_KEY_HERE'
+source ~/dotfiles/vimrc/.secrets
 
 filetype plugin indent on
 
