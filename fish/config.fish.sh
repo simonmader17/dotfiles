@@ -62,6 +62,10 @@ set --export CHROME_PATH "/usr/bin/brave-browser"
 # miniconda
 set --export PATH "$HOME/miniconda3/bin:$PATH"
 
+# Go
+set --export GOPATH "$HOME/.go"
+set --export PATH "$GOPATH/bin:$PATH"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /home/simon/miniconda3/bin/conda
