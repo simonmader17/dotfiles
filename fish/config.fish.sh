@@ -30,7 +30,7 @@ set --export CHROME_EXECUTABLE "/usr/bin/brave-browser"
 
 # On Startup
 # wal -R && clear
-wal -Rqe -o ~/dotfiles/polybar/add_alpha_to_color0.sh
+wal -Rqe
 bash ~/.fonts/*.sh
 
 # My Aliases
