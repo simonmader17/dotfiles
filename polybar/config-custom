@@ -186,7 +186,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 ; modules-center = mpd
 ;modules-right = fs-root fs-d fs-f fs-p xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
 ; modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature nordvpn wlan eth battery date 
-modules-left = fs-root fs-d fs-f fs-p
+modules-left = fs-root fs-d fs-f fs-p spotify
 ; modules-center = audiodevice pulseaudio
 modules-right = nordvpn wlan
 enable-ipc = true
@@ -662,3 +662,16 @@ margin-bottom = 0
 margin-left = 0
 
 ; vim:ft=dosini
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python3 $HOME/dotfiles/polybar/spotify_status.py -f '{song} - {artist}'
+;format-underline = #1db954
+format-underline = ${xrdb:color2}
+;control players (optional)
+click-left = playerctl --player=spotify play-pause
+click-right = playerctl --player=spotify next
+click-middle = playerctl --player=spotify previous
