@@ -38,9 +38,9 @@ if type "xrandr"; then
 			MONITOR=$m polybar --reload top &
 		else
 			MONITOR=$m polybar --reload top-small &
-			if [ "$largeMonitorExists" = false ]; then
+			# if [ "$largeMonitorExists" = false ]; then
 				MONITOR=$m polybar --reload bottom-small &
-			fi
+			# fi
 		fi
 		if [[ "$m" == "$primary" ]]; then
 			sleep 1 # Wait for primary monitor to grab the tray
