@@ -20,7 +20,8 @@ end
 
 function fish_greeting
 	# fish_logo
-	python3 /home/simon/scripts/ascii.py | lolcat
+	# python3 /home/simon/scripts/ascii.py | lolcat
+	colorscript random
 end
 
 set --export PATH "$HOME/.local/bin:$PATH"
