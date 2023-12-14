@@ -1,3 +1,11 @@
+snippet qq
+	\enquote{${1:TEXT}}${0}
+
+snippet mysection
+	\\${1:SECTIONTYPE}*{${2:SECTIONNAME}}
+	\addcontentsline{toc}{$1}{$2}
+	${0}
+
 snippet bfm
 	$\boldsymbol{${1:BOLD MATH}}$${0}
 
