@@ -158,7 +158,14 @@ Plug 'lervag/vimtex'
 " Code::Stats
 Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
+" hardmode
+Plug 'https://github.com/wikitopian/hardmode'
+
 call plug#end()
+
+let g:HardMode_level = 'wannabe'
+let g:HardMode_hardmodeMsg = 'Don''t use this!'
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Content of .secrets:
 " let g:codestats_api_key = 'YOUR_KEY_HERE'
