@@ -41,4 +41,13 @@ return require('packer').startup(function(use)
 	-- auto closing of parenthesis etc.
 	use 'raimondi/delimitmate'
 
+	-- Code::Stats
+	use 'https://gitlab.com/code-stats/code-stats-vim.git'
+
+	-- lualine.nvim
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
+
 end)
