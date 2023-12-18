@@ -19,6 +19,14 @@ vim.keymap.set("n", "<leader>gol", function()
 	vim.opt.wrap = false
 end)
 
+-- move multiple lines
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- keep search terms in the middle of the screen
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
 -- LaTeX mappings
 vim.api.nvim_create_autocmd({"FileType"}, {
 	pattern = "tex",
