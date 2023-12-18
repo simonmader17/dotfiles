@@ -38,3 +38,21 @@ vim.api.nvim_create_autocmd({"FileType"}, {
 		end, { expr = true })
 	end
 })
+
+-- c mappings
+vim.api.nvim_create_autocmd({"FileType"}, {
+	pattern = "c",
+	callback = function()
+		-- format file
+		vim.keymap.set("n", "<leader>f", ":w<CR>:!clang-format -i %<CR><CR>")
+	end
+})
+
+-- java mappings
+vim.api.nvim_create_autocmd({"FileType"}, {
+	pattern = "java",
+	callback = function()
+		-- format file
+		vim.keymap.set("n", "<leader>f", ":w<CR>:!clang-format -i %<CR><CR>")
+	end
+})
