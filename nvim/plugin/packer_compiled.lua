@@ -157,7 +157,7 @@ _G.packer_plugins = {
   pywal = {
     loaded = true,
     path = "/home/simon/.local/share/nvim/site/pack/packer/start/pywal",
-    url = "https://github.com/AlphaTechnolog/pywal.nvim"
+    url = "https://github.com/simonmader17/pywal.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

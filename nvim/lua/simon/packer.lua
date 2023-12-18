@@ -54,9 +54,13 @@ return require('packer').startup(function(use)
 	use 'nvim-tree/nvim-tree.lua'
 
 	-- pywal.nvim
+	-- use {
+	-- 	'AlphaTechnolog/pywal.nvim',
+	-- 	as = 'pywal'
+	-- }
 	use {
-		'AlphaTechnolog/pywal.nvim',
-		as = 'pywal'
+		"https://github.com/simonmader17/pywal.nvim",
+		as = "pywal"
 	}
 
 end)

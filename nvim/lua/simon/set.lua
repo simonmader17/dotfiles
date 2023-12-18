@@ -16,3 +16,7 @@ vim.opt.linebreak = true
 
 -- Deactivate mouse interactivity
 vim.opt.mouse = ""
+
+vim.opt.cursorline = true
+
+
