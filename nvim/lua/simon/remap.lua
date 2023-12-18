@@ -9,6 +9,16 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("i", "{<CR>", "{<CR>}<ESC>O")
 
+-- when nothing works anymore...
+vim.keymap.set("n", "<leader>fml", function()
+	vim.cmd("CellularAutomaton make_it_rain")
+	vim.opt.wrap = false
+end)
+vim.keymap.set("n", "<leader>gol", function()
+	vim.cmd("CellularAutomaton game_of_life")
+	vim.opt.wrap = false
+end)
+
 -- LaTeX mappings
 vim.api.nvim_create_autocmd({"FileType"}, {
 	pattern = "tex",

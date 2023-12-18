@@ -63,4 +63,6 @@ return require('packer').startup(function(use)
 		as = "pywal"
 	}
 
+	use 'eandrju/cellular-automaton.nvim'
+
 end)
