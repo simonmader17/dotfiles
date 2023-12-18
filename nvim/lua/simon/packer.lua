@@ -47,7 +47,16 @@ return require('packer').startup(function(use)
 	-- lualine.nvim
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+		requires = { 'nvim-tree/nvim-web-devicons' }
+	}
+
+	-- nvim-tree
+	use 'nvim-tree/nvim-tree.lua'
+
+	-- pywal.nvim
+	use {
+		'AlphaTechnolog/pywal.nvim',
+		as = 'pywal'
 	}
 
 end)

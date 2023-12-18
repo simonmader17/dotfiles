@@ -1,7 +1,11 @@
 -- Leader key
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- nvim-tree
+vim.keymap.set("n", "<leader>pv", ":NvimTreeFocus<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("i", "{<CR>", "{<CR>}<ESC>O")
 
