@@ -13,3 +13,15 @@ require('mason-lspconfig').setup({
 		lsp_zero.default_setup,
 	},
 })
+
+require('lspconfig').jdtls.setup({
+	config = {
+		settings = {
+			java = {
+				signatureHelp = {
+					enabled = true
+				}
+			}
+		}
+	}
+})
