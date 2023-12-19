@@ -75,7 +75,8 @@ ln -sfv ~/dotfiles/vimrc/.vimrc ~/.vimrc
 # ln -sfv ~/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 # ln -sfv ~/dotfiles/nvim/plug-config/coc.vim ~/.config/nvim/plug-config/coc.vim
 # ln -sfv ~/dotfiles/nvim/treesitter.lua ~/.config/nvim/treesitter.lua
-ln -sfv ~/dotfiles/nvim ~/.config/nvim
+unlink ~/.config/nvim
+ln -sv ~/dotfiles/nvim ~/.config/nvim
 
 # Pandoc templatex
 mkdir -pv ~/.local/share/pandoc/templates
