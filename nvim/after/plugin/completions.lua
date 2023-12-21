@@ -107,5 +107,12 @@ ls.add_snippets("tex", {
 	}),
 })
 
+ls.add_snippets("c", {
+	s("***", {
+		t{"/************************************************", " * "},
+		i(1, "COMMENT_TEXT"),
+		t{"", " ***********************************************/"}, i(0)
+	})
+})
 -- load friendly-snippets
 require("luasnip.loaders.from_vscode").lazy_load()
