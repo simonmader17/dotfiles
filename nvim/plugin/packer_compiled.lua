@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/simon/.local/share/nvim/site/pack/packer/start/delimitmate",
     url = "https://github.com/raimondi/delimitmate"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/simon/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/simon/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",

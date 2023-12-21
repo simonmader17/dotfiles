@@ -106,3 +106,6 @@ ls.add_snippets("tex", {
 		i(0)
 	}),
 })
+
+-- load friendly-snippets
+require("luasnip.loaders.from_vscode").lazy_load()
