@@ -33,8 +33,8 @@ function dynamic_node_external_update(func_indx)
 	local insert_pre_call = vim.fn.mode() == "i"
 	-- is byte-indexed! Doesn't matter here, but important to be aware of.
 	local cursor_pos_pre_relative = util.pos_sub(
-	util.get_cursor_0ind(),
-	current_node.mark:pos_begin_raw()
+		util.get_cursor_0ind(),
+		current_node.mark:pos_begin_raw()
 	)
 
 	-- leave current generated snippet.
@@ -70,10 +70,10 @@ function dynamic_node_external_update(func_indx)
 
 		if insert_pre_call then
 			util.set_cursor_0ind(
-			util.pos_add(
-			target_node.mark:pos_begin_raw(),
-			cursor_pos_pre_relative
-			)
+				util.pos_add(
+					target_node.mark:pos_begin_raw(),
+					cursor_pos_pre_relative
+				)
 			)
 		else
 			node_util.select_node(target_node)
@@ -87,11 +87,11 @@ function dynamic_node_external_update(func_indx)
 end
 
 -- Bind the function to some key:
-vim.api.nvim_set_keymap('i', "<C-t>", '<cmd>lua _G.dynamic_node_external_update(1)<Cr>', {noremap = true})
-vim.api.nvim_set_keymap('s', "<C-t>", '<cmd>lua _G.dynamic_node_external_update(1)<Cr>', {noremap = true})
+vim.api.nvim_set_keymap('i', "<C-t>", '<cmd>lua _G.dynamic_node_external_update(1)<Cr>', { noremap = true })
+vim.api.nvim_set_keymap('s', "<C-t>", '<cmd>lua _G.dynamic_node_external_update(1)<Cr>', { noremap = true })
 
-vim.api.nvim_set_keymap('i', "<C-g>", '<cmd>lua _G.dynamic_node_external_update(2)<Cr>', {noremap = true})
-vim.api.nvim_set_keymap('s', "<C-g>", '<cmd>lua _G.dynamic_node_external_update(2)<Cr>', {noremap = true})
+vim.api.nvim_set_keymap('i', "<C-g>", '<cmd>lua _G.dynamic_node_external_update(2)<Cr>', { noremap = true })
+vim.api.nvim_set_keymap('s', "<C-g>", '<cmd>lua _G.dynamic_node_external_update(2)<Cr>', { noremap = true })
 
 -- Now it's time to make use of the new function
 local ls = require("luasnip")
@@ -141,17 +141,17 @@ local tab = function(args, snip)
 	local ins_indx = 1
 	for j = 1, snip.rows do
 		-- use restoreNode to not lose content when updating.
-		table.insert(nodes, r(ins_indx, tostring(j).."x1", i(1)))
-		ins_indx = ins_indx+1
+		table.insert(nodes, r(ins_indx, tostring(j) .. "x1", i(1)))
+		ins_indx = ins_indx + 1
 		for k = 2, cols do
-			table.insert(nodes, t" & ")
-			table.insert(nodes, r(ins_indx, tostring(j).."x"..tostring(k), i(1)))
-			ins_indx = ins_indx+1
+			table.insert(nodes, t " & ")
+			table.insert(nodes, r(ins_indx, tostring(j) .. "x" .. tostring(k), i(1)))
+			ins_indx = ins_indx + 1
 		end
-		table.insert(nodes, t{"\\\\", ""})
+		table.insert(nodes, t { "\\\\", "" })
 	end
 	-- fix last node.
-	nodes[#nodes] = t""
+	nodes[#nodes] = t ""
 	return sn(nil, nodes)
 end
 
@@ -160,7 +160,7 @@ ls.add_snippets("tex", {
 	\begin{{tabular}}{{{}}}
 	{}
 	\end{{tabular}}
-	]], {i(1, "c"), d(2, tab, {1}, {
+	]], { i(1, "c"), d(2, tab, { 1 }, {
 		user_args = {
 			-- Pass the functions used to manually update the dynamicNode as user args.
 			-- The n-th of these functions will be called by dynamic_node_external_update(n).
@@ -170,5 +170,5 @@ ls.add_snippets("tex", {
 			-- don't drop below one.
 			function(snip) snip.rows = math.max(snip.rows - 1, 1) end
 		}
-	} )}))
+	}) }))
 })

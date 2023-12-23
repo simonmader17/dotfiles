@@ -24,6 +24,6 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 500
 
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
 
 vim.g.tex_flavor = "latex"

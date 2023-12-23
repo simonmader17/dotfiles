@@ -11,11 +11,11 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
 	-- treesitter syntax highlighting
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
 	-- lsp-zero language server
 	use {
@@ -23,14 +23,14 @@ return require('packer').startup(function(use)
 		branch = 'v3.x',
 		requires = {
 			--- Uncomment these if you want to manage LSP servers from neovim
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
+			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason-lspconfig.nvim' },
 
 			-- LSP Support
-			{'neovim/nvim-lspconfig'},
+			{ 'neovim/nvim-lspconfig' },
 			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-nvim-lsp'},
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
 			{
 				'L3MON4D3/LuaSnip',
 				requires = { "rafamadriz/friendly-snippets" },
@@ -66,6 +66,14 @@ return require('packer').startup(function(use)
 		as = "pywal"
 	}
 
+	-- when nothing seems to work
 	use 'eandrju/cellular-automaton.nvim'
 
+	-- Comment.nvim
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
 end)

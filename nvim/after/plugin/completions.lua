@@ -3,8 +3,8 @@ local ls = require('luasnip')
 
 cmp.setup({
 	sources = {
-		{name = 'nvim_lsp'},
-		{name = 'luasnip'}
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' }
 	},
 	mapping = {
 		["<Tab>"] = cmp.mapping(function(fallback)
@@ -58,16 +58,16 @@ local rep = require("luasnip.extras").rep
 
 ls.add_snippets("tex", {
 	s("snip", {
-		t("s(\""), i(1, "SNIPPET_NAME"), t({"\", {", ""}),
+		t("s(\""), i(1, "SNIPPET_NAME"), t({ "\", {", "" }),
 		t("\t"), i(2, "SNIPPET_CONTENT"),
-		t({"", "}),"}), i(0)
+		t({ "", "})," }), i(0)
 	}),
 	s("qq", {
 		t("\\enquote{"), i(1, "TEXT"), t("}"), i(0)
 	}),
 	s("mysection", {
-		t("\\"), i(1, "SECTION_TYPE"), t("*{"), i(2, "SECTION_NAME"), t({"}", ""}),
-		t("\\addcontentsline{toc}{"), rep(1), t("}{"), rep(2), t({"}", ""}), i(0)
+		t("\\"), i(1, "SECTION_TYPE"), t("*{"), i(2, "SECTION_NAME"), t({ "}", "" }),
+		t("\\addcontentsline{toc}{"), rep(1), t("}{"), rep(2), t({ "}", "" }), i(0)
 	}),
 	s("bfm", {
 		t("$\\boldsymbol{"), i(1, "BOLD_MATH"), t("}$"), i(0)
@@ -88,9 +88,9 @@ ls.add_snippets("tex", {
 		t("\\includegraphics[width="), i(1, "\\textwidth"), t("]{"), i(2, "FILENAME"), t("}"), i(0)
 	}),
 	s("\\begin", {
-		t("\\begin{"), i(1, "ENV"), t({"}", "\t"}),
+		t("\\begin{"), i(1, "ENV"), t({ "}", "\t" }),
 		i(0),
-		t({"", "\\end{"}), rep(1), t("}")
+		t({ "", "\\end{" }), rep(1), t("}")
 	}),
 	s("\\frac", {
 		t("\\frac{"), i(1, "NUMERATOR"), t("}{"), i(2, "DENOMINATOR"), t("}"), i(0)
@@ -99,9 +99,9 @@ ls.add_snippets("tex", {
 		t("\\binom{"), i(1, "n"), t("}{"), i(2, "k"), t("}"), i(0)
 	}),
 	s("fig", {
-		t({"\\begin{figure}[H]", "\t\\centering", "\t\\includegraphics[width="}),
-		i(1, "\\textwidth"), t("]{"), i(2, "FILENAME"), t({"}", "\t\\caption{"}),
-		i(3, "CAPTION"), t({"}", "\t\\label{"}),
+		t({ "\\begin{figure}[H]", "\t\\centering", "\t\\includegraphics[width=" }),
+		i(1, "\\textwidth"), t("]{"), i(2, "FILENAME"), t({ "}", "\t\\caption{" }),
+		i(3, "CAPTION"), t({ "}", "\t\\label{" }),
 		i(4, "LABEL"), t({ "}", "\\end{figure}", "", "" }),
 		i(0)
 	}),
@@ -109,9 +109,9 @@ ls.add_snippets("tex", {
 
 ls.add_snippets("c", {
 	s("***", {
-		t{"/************************************************", " * "},
+		t { "/************************************************", " * " },
 		i(1, "COMMENT_TEXT"),
-		t{"", " ***********************************************/"}, i(0)
+		t { "", " ***********************************************/" }, i(0)
 	})
 })
 -- load friendly-snippets
