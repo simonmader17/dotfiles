@@ -1,5 +1,4 @@
-require("simon.packer")
-require("simon.remap")
 require("simon.set")
--- Includes secrets like vim.g.codestats_api_key:
-require("simon.secrets")
+require("simon.secrets") -- Includes secrets like vim.g.codestats_api_key
+require("simon.remap")
+require("simon.packer")

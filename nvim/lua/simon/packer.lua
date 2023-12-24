@@ -76,4 +76,10 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 		end
 	}
+
+	-- dashboard
+	use {
+		'goolord/alpha-nvim',
+		requires = { 'nvim-tree/nvim-web-devicons' }
+	}
 end)

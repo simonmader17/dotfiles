@@ -1,3 +1,7 @@
+-- Leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Cursor style
 vim.opt.guicursor = ""
 

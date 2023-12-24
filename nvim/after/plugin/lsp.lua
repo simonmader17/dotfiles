@@ -25,3 +25,15 @@ require('lspconfig').jdtls.setup({
 		}
 	}
 })
+
+-- lua language server
+local lua_opts = lsp_zero.nvim_lua_ls({
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	}
+})
+require('lspconfig').lua_ls.setup(lua_opts)
