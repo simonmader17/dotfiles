@@ -31,3 +31,10 @@ vim.opt.updatetime = 500
 vim.opt.colorcolumn = "80"
 
 vim.g.tex_flavor = "latex"
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = "tex",
+	callback = function()
+		vim.g.tex_flavor = "latex"
+		vim.bo.filetype = "plaintex"
+	end
+})

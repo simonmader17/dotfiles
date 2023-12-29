@@ -20,13 +20,16 @@ end)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- keep search terms in the middle of the screen
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- LaTeX mappings
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = "tex",
+	pattern = { "tex", "plaintex" },
 	callback = function()
 		-- LaTeX save and compile
 		vim.keymap.set("n", "<F4>", ":w<CR>:!lualatex --shell-escape %<CR><CR>")

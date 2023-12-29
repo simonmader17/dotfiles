@@ -20,7 +20,7 @@ window:
     y: 10
 font:
   normal:
-    family: BlexMono Nerd Font
+    family: MesloLGS Nerd Font
     style: Regular
   size: 14
 

@@ -56,7 +56,7 @@ local f = ls.function_node
 local i = ls.insert_node
 local rep = require("luasnip.extras").rep
 
-ls.add_snippets("tex", {
+local tex_snippets = {
 	s("snip", {
 		t("s(\""), i(1, "SNIPPET_NAME"), t({ "\", {", "" }),
 		t("\t"), i(2, "SNIPPET_CONTENT"),
@@ -105,7 +105,9 @@ ls.add_snippets("tex", {
 		i(4, "LABEL"), t({ "}", "\\end{figure}", "", "" }),
 		i(0)
 	}),
-})
+}
+ls.add_snippets("tex", tex_snippets)
+ls.add_snippets("plaintex", tex_snippets)
 
 ls.add_snippets("c", {
 	s("***", {
