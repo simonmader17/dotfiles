@@ -44,6 +44,9 @@ return require('packer').startup(function(use)
 	-- auto closing of parenthesis etc.
 	use 'raimondi/delimitmate'
 
+	-- auto closing of html tags
+	use 'windwp/nvim-ts-autotag'
+
 	-- Code::Stats
 	use 'https://gitlab.com/code-stats/code-stats-vim.git'
 
@@ -82,4 +85,7 @@ return require('packer').startup(function(use)
 		'goolord/alpha-nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
+
+	-- color previewer
+	use "brenoprata10/nvim-highlight-colors"
 end)
