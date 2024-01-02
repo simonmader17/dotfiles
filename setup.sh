@@ -9,6 +9,10 @@ ln -sfv ~/dotfiles/gtkrc-2.0/.gtkrc-2.0 ~/.gtkrc-2.0
 mkdir -pv ~/.config/alacritty
 ln -sfv ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
+# Kitty
+mkdir -pv ~/.config/kitty
+ln -sfv ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+
 # .bashrc
 ln -sfv ~/dotfiles/bashrc/.bashrc ~/.bashrc
 
