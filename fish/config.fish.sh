@@ -31,7 +31,10 @@ set --export CHROME_EXECUTABLE "/usr/bin/brave-browser"
 
 # On Startup
 # wal -R && clear
-wal -Rqe
+# wal -Rqe
+if test $TERM != "xterm-kitty"
+	/usr/bin/cat ~/.cache/wal/sequences
+end
 bash ~/.fonts/*.sh
 
 # My Aliases
@@ -73,3 +76,8 @@ if test -f /home/simon/miniconda3/bin/conda
     eval /home/simon/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
+
+# Kitten SSH
+if test "$TERM" = "xterm-kitty"
+	alias ssh="kitten ssh"
+end
