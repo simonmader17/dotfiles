@@ -155,9 +155,9 @@ local tab = function(args, snip)
 	return sn(nil, nodes)
 end
 
-ls.add_snippets("tex", {
+local tabular_snippet = {
 	s("tabular", fmt([[
-	\begin{{tabular}}{{{}}}
+	\begin{{tabular}}{{{}}} % <C-t> to add row, <C-g> to remove one row
 	{}
 	\end{{tabular}}
 	]], { i(1, "c"), d(2, tab, { 1 }, {
@@ -171,4 +171,7 @@ ls.add_snippets("tex", {
 			function(snip) snip.rows = math.max(snip.rows - 1, 1) end
 		}
 	}) }))
-})
+}
+
+ls.add_snippets("tex", tabular_snippet)
+ls.add_snippets("plaintex", tabular_snippet)
