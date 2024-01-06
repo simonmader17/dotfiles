@@ -4,7 +4,8 @@ local ls = require('luasnip')
 cmp.setup({
 	sources = {
 		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' }
+		{ name = 'luasnip' },
+		{ name = 'lua-latex-symbols', option = { cache = true } },
 	},
 	mapping = {
 		["<Tab>"] = cmp.mapping(function(fallback)

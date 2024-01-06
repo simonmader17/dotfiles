@@ -91,4 +91,7 @@ return require('packer').startup(function(use)
 
 	-- vimtex
 	use "lervag/vimtex"
+
+	-- latex math symbols
+	use "amarakon/nvim-cmp-lua-latex-symbols"
 end)
