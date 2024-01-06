@@ -88,4 +88,7 @@ return require('packer').startup(function(use)
 
 	-- color previewer
 	use "brenoprata10/nvim-highlight-colors"
+
+	-- vimtex
+	use "lervag/vimtex"
 end)
