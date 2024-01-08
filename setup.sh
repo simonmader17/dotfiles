@@ -89,3 +89,7 @@ ln -sfv ~/dotfiles/pandoc/templates/eisvogel.latex ~/.local/share/pandoc/templat
 # .vim colors
 mkdir -pv ~/.vim/colors
 ln -sfv ~/dotfiles/vim/colors/delek.vim ~/.vim/colors/delek.vim
+
+# dunst
+mkdir -pv ~/.config/dunst
+ln -sfv ~/dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
