@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
 	-- more completions
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'saadparwaiz1/cmp_luasnip'
+	use 'https://github.com/FelipeLema/cmp-async-path'
 
 	-- auto closing of parenthesis etc.
 	use 'raimondi/delimitmate'

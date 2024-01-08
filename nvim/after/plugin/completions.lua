@@ -1,53 +1,36 @@
 local cmp = require('cmp')
 local ls = require('luasnip')
 
+local function create_cmp_mapping(ifthis, dothat)
+	return cmp.mapping(function(fallback)
+		if ifthis() then
+			dothat()
+		else
+			fallback()
+		end
+	end, { "i", "s" })
+end
+
 cmp.setup({
 	sources = {
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
 		{ name = 'lua-latex-symbols', option = { cache = true } },
+		{ name = 'async_path' },
 	},
 	mapping = {
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if ls.expand_or_jumpable() then
-				ls.expand_or_jump()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if ls.expand_or_jumpable() then
-				ls.jump(-1)
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-		["<down>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-
-		["<up>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
+		["<Tab>"] = create_cmp_mapping(ls.expand_or_jumpable, ls.expand_or_jump),
+		["<S-Tab>"] = create_cmp_mapping(ls.expand_or_jumpable, function() ls.jump(-1) end),
+		["<down>"] = create_cmp_mapping(cmp.visible, cmp.select_next_item),
+		["<C-n>"] = create_cmp_mapping(cmp.visible, cmp.select_next_item),
+		["<up>"] = create_cmp_mapping(cmp.visible, cmp.select_prev_item),
+		["<C-p>"] = create_cmp_mapping(cmp.visible, cmp.select_prev_item),
 	},
 	snippet = {
 		expand = function(args)
 			ls.lsp_expand(args.body)
 		end,
 	},
-	-- Preselect first item
-	-- preselect = "item",
-	-- completion = {
-	-- 	completeopt = "menu,menuone,noinsert"
-	-- }
 })
 
 -- my snippets
