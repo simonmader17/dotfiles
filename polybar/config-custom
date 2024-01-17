@@ -124,7 +124,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 modules-left = i3 xwindow
 modules-center = mpd
 ;modules-right = fs-root fs-d fs-f fs-p xbacklight alsa pulseaudio xkeyboard memory gpu cpu wlan eth battery temperature date powermenu
-modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature eth battery date 
+modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature battery date 
 enable-ipc = true
 
 tray-position = right
@@ -188,7 +188,7 @@ font-0 = FiraCode Nerd Font:size=11;1
 ; modules-right = xbacklight audiodevice pulseaudio memory gpu cpu temperature nordvpn wlan eth battery date 
 modules-left = fs-root fs-d fs-f fs-p spotify
 ; modules-center = audiodevice pulseaudio
-modules-right = nordvpn wlan
+modules-right = nordvpn wlan eth
 enable-ipc = true
 
 tray-position = right
@@ -211,7 +211,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:21:...%
 label-foreground = ${xrdb:color7}
 
 [module/xkeyboard]
