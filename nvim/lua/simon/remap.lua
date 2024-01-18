@@ -53,6 +53,29 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end
 })
 
+-- markdown mappings
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = "markdown",
+	callback = function()
+		-- markdown save and compile
+		vim.keymap.set("n", "<F5>", function()
+			local pdfName = vim.fn.expand("%"):gsub("md", "pdf")
+			return ":w<CR>:!pandoc --verbose --template eisvogel -H ~/dotfiles/vimrc/disable_float.tex -o \"" ..
+				pdfName .. "\" \"%\"<CR><CR>"
+		end, { expr = true })
+		vim.keymap.set("i", "<F5>", function()
+			local pdfName = vim.fn.expand("%"):gsub("md", "pdf")
+			return "<ESC>:w<CR>:!pandoc --verbose --template eisvogel -H ~/dotfiles/vimrc/disable_float.tex -o \"" ..
+				pdfName .. "\" \"%\"<CR><CR>a"
+		end, { expr = true })
+		-- markdown save and compile with marp
+		vim.keymap.set("n", "<F17>", ":w<CR>:!marp --pdf \"%\"<CR><CR>")
+		vim.keymap.set("i", "<F17>", "<ESC>:w<CR>:!marp --pdf \"%\"<CR><CR>a")
+		-- markdown save and compile with marp to html
+		-- vim.keymap.set("n", "<C-S-F5>", "!echo test")
+	end
+})
+
 -- c mappings
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "c",
