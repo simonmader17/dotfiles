@@ -19,7 +19,10 @@ function send_notification {
 		icon="$icon_low"
 	fi
 	bar=$(seq -s "─" 0 $((brightness / 5)) | sed 's/[0-9]//g')
-	dunstify -r 5555 -h string:x-dunst-stack-tag:brightness -i "$icon" "$bar"
+	if [ "$brightness" -lt 100 ]; then
+		brightness=" $brightness"
+	fi
+	dunstify -r 5555 -h string:x-dunst-stack-tag:brightness -i "$icon" "$brightness% $bar"
 }
 
 case $1 in
