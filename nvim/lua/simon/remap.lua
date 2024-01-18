@@ -43,11 +43,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 			"<ESC>:w<CR>:!pdflatex --shell-escape %<CR><CR>:!biber %<<CR><CR>:!pdflatex --shell-escape %<CR><CR>a")
 		-- LaTeX open pdf
 		vim.keymap.set("n", "<F6>", function()
-			local pdfName = vim.fn.expand("%"):gsub("tex", "pdf")
+			local pdfName = vim.fn.expand("%"):gsub("[.]tex", ".pdf")
 			return ":!xdg-open \"" .. pdfName .. "\" &<CR><CR>"
 		end, { expr = true })
 		vim.keymap.set("i", "<F6>", function()
-			local pdfName = vim.fn.expand("%"):gsub("tex", "pdf")
+			local pdfName = vim.fn.expand("%"):gsub("[.]tex", ".pdf")
 			return "<ESC>:!xdg-open \"" .. pdfName .. "\" &<CR><CR>a"
 		end, { expr = true })
 	end
@@ -59,20 +59,50 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	callback = function()
 		-- markdown save and compile
 		vim.keymap.set("n", "<F5>", function()
-			local pdfName = vim.fn.expand("%"):gsub("md", "pdf")
+			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".pdf")
 			return ":w<CR>:!pandoc --verbose --template eisvogel -H ~/dotfiles/vimrc/disable_float.tex -o \"" ..
 				pdfName .. "\" \"%\"<CR><CR>"
 		end, { expr = true })
 		vim.keymap.set("i", "<F5>", function()
-			local pdfName = vim.fn.expand("%"):gsub("md", "pdf")
+			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".pdf")
 			return "<ESC>:w<CR>:!pandoc --verbose --template eisvogel -H ~/dotfiles/vimrc/disable_float.tex -o \"" ..
 				pdfName .. "\" \"%\"<CR><CR>a"
 		end, { expr = true })
+		-- markdown save and compile to html
+		vim.keymap.set("n", "<F17>", function()
+			local htmlName = vim.fn.expand("%"):gsub("[.]md", ".html")
+			return ":w<ESC>:!pandoc --verbose -f markdown -t html -o \"" .. htmlName .. "\" \"%\"<CR><CR>"
+		end, { expr = true })
+		vim.keymap.set("i", "<F17>", function()
+			local htmlName = vim.fn.expand("%"):gsub("[.]md", ".html")
+			return "<ESC>:w<ESC>:!pandoc --verbose -f markdown -t html -o \"" .. htmlName .. "\" \"%\"<CR><CR>a"
+		end, { expr = true })
+
 		-- markdown save and compile with marp
-		vim.keymap.set("n", "<F17>", ":w<CR>:!marp --pdf \"%\"<CR><CR>")
-		vim.keymap.set("i", "<F17>", "<ESC>:w<CR>:!marp --pdf \"%\"<CR><CR>a")
+		vim.keymap.set("n", "<F4>", ":w<CR>:!marp --pdf \"%\"<CR><CR>")
+		vim.keymap.set("i", "<F4>", "<ESC>:w<CR>:!marp --pdf \"%\"<CR><CR>a")
 		-- markdown save and compile with marp to html
-		-- vim.keymap.set("n", "<C-S-F5>", "!echo test")
+		vim.keymap.set("n", "<F16>", ":w<CR>:!marp \"%\"<CR><CR>")
+		vim.keymap.set("i", "<F16>", "<ESC>:w<CR>:!marp \"%\"<CR><CR>a")
+
+		-- markdown open pdf
+		vim.keymap.set("n", "<F6>", function()
+			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".pdf")
+			return ":!xdg-open \"" .. pdfName .. "\" &<CR><CR>"
+		end, { expr = true })
+		vim.keymap.set("i", "<F6>", function()
+			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".pdf")
+			return "<ESC>:!xdg-open \"" .. pdfName .. "\" &<CR><CR>a"
+		end, { expr = true })
+		-- markdown open html
+		vim.keymap.set("n", "<F18>", function()
+			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".html")
+			return ":!xdg-open \"" .. pdfName .. "\" &<CR><CR>"
+		end, { expr = true })
+		vim.keymap.set("i", "<F18>", function()
+			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".html")
+			return "<ESC>:!xdg-open \"" .. pdfName .. "\" &<CR><CR>a"
+		end, { expr = true })
 	end
 })
 
