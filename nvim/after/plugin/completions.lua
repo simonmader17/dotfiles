@@ -93,6 +93,12 @@ local tex_snippets = {
 ls.add_snippets("tex", tex_snippets)
 ls.add_snippets("plaintex", tex_snippets)
 
+ls.add_snippets("markdown", {
+	s("bf", { t("**"), i(1, "BOLD_TEXT"), t("**"), i(0) }),
+	s("it", { t("*"), i(1, "ITALIC_TEXT"), t("*"), i(0) }),
+	s("tt", { t("`"), i(1, "TYPEWRITTEN_TEXT"), t("`"), i(0) }),
+})
+
 ls.add_snippets("c", {
 	s("***", {
 		t { "/************************************************", " * " },

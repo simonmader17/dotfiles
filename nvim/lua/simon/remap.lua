@@ -71,11 +71,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		-- markdown save and compile to html
 		vim.keymap.set("n", "<F17>", function()
 			local htmlName = vim.fn.expand("%"):gsub("[.]md", ".html")
-			return ":w<ESC>:!pandoc --verbose -f markdown -t html -o \"" .. htmlName .. "\" \"%\"<CR><CR>"
+			return ":w<ESC>:!pandoc --verbose -f markdown -s -t html -o \"" .. htmlName .. "\" \"%\"<CR><CR>"
 		end, { expr = true })
 		vim.keymap.set("i", "<F17>", function()
 			local htmlName = vim.fn.expand("%"):gsub("[.]md", ".html")
-			return "<ESC>:w<ESC>:!pandoc --verbose -f markdown -t html -o \"" .. htmlName .. "\" \"%\"<CR><CR>a"
+			return "<ESC>:w<ESC>:!pandoc --verbose -f markdown -s -t html -o \"" .. htmlName .. "\" \"%\"<CR><CR>a"
 		end, { expr = true })
 
 		-- markdown save and compile with marp

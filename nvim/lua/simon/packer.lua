@@ -95,4 +95,7 @@ return require('packer').startup(function(use)
 
 	-- latex math symbols
 	use "amarakon/nvim-cmp-lua-latex-symbols"
+
+	-- nvim-markdown
+	use "ixru/nvim-markdown"
 end)
