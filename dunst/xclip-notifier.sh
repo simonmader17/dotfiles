@@ -1,26 +1,45 @@
 #!/bin/bash
 
-# kill running program instances
-# killall xclip-notifier.sh
+send_text_notification() {
+	ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -a xclip-notifier -r 5556 -i "accessories-clipboard" -u low --action="default,openGedit" "Copied text to clipboard" "$content")
+	case "$ACTION" in
+		"default")
+			xclip -selection clipboard -o | gedit - &
+			;;
+		"2")
+			;;
+	esac
+}
 
-if xclip -selection clipboard -o; then
-	prev_content=$(xclip -selection clipboard -o)
-else
+send_image_notification() {
+	tmpfile=$(mktemp)
+	xclip -selection clipboard -t image/png -o > $tmpfile
+	ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -a xclip-notifier -r 5556 -i $tmpfile -u low --action="default,openGimp" "Copied image to clipboard")
+	case "$ACTION" in
+		"default")
+			gimp $tmpfile &
+			;;
+		"2")
+			;;
+	esac
+}
+
+if xclip -selection clipboard -t image/png -o >/dev/null; then
 	prev_content=$(xclip -selection clipboard -t image/png -o)
+elif xclip -selection clipboard -o >/dev/null; then
+	prev_content=$(xclip -selection clipboard -o)
 fi
 
 while clipnotify; do
-	if xclip -selection clipboard -o; then
-		content=$(xclip -selection clipboard -o)
-		if [ "$content" != "$prev_content" ]; then
-			dunstify -h string:x-dunst-stack-tag:xclip-notifier -a xclip-notifier -r 5556 -i "accessories-clipboard" -u low "Copied text to clipboard" "$content"
-		fi
-	else
+	if xclip -selection clipboard -t image/png -o >/dev/null; then
 		content=$(xclip -selection clipboard -t image/png -o)
 		if [ "$content" != "$prev_content" ]; then
-			tmpfile=$(mktemp)
-			xclip -selection clipboard -t image/png -o > $tmpfile
-			dunstify -h string:x-dunst-stack-tag:xclip-notifier -a xclip-notifier -r 5556 -i $tmpfile -u low "Copied image to clipboard"
+			send_image_notification &
+		fi
+	elif xclip -selection clipboard -o >/dev/null; then
+		content=$(xclip -selection clipboard -o)
+		if [ "$content" != "$prev_content" ]; then
+			send_text_notification &
 		fi
 	fi
 	prev_content="$content"

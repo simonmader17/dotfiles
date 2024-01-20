@@ -326,6 +326,7 @@
 	stack_tag = "brightness"
 	highlight = "#000000"
 	foreground = "#000000"
+	history_ignore = yes
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
