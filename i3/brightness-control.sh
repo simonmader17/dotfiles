@@ -22,7 +22,7 @@ function send_notification {
 	if [ "$brightness" -lt 100 ]; then
 		brightness=" $brightness"
 	fi
-	dunstify -h string:x-dunst-stack-tag:brightness-control -i "$icon" "$brightness% $bar"
+	dunstify -h string:x-dunst-stack-tag:brightness-control -i "$icon" -u "low" "$brightness% $bar"
 }
 
 case $1 in
