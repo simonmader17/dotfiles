@@ -1,7 +1,7 @@
 #!/bin/bash
 
 send_text_notification() {
-	ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -a xclip-notifier -r 5556 -i "accessories-clipboard" -u low --action="default,openGedit" "Copied text to clipboard" "$content")
+	ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -i "accessories-clipboard" -u low --action="default,openGedit" "Copied text to clipboard" "$content")
 	case "$ACTION" in
 		"default")
 			xclip -selection clipboard -o | gedit - &
@@ -14,7 +14,7 @@ send_text_notification() {
 send_image_notification() {
 	tmpfile=$(mktemp)
 	xclip -selection clipboard -t image/png -o > $tmpfile
-	ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -a xclip-notifier -r 5556 -i $tmpfile -u low --action="default,openGimp" "Copied image to clipboard")
+	ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -i $tmpfile -u low --action="default,openGimp" "Copied image to clipboard")
 	case "$ACTION" in
 		"default")
 			gimp $tmpfile &
