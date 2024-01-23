@@ -7,7 +7,7 @@ icon_low="audio-volume-low-symbolic"
 icon_muted="audio-volume-muted-symbolic"
 
 pactl subscribe |
-grep --line-buffered "sink" |
+grep --line-buffered " sink " |
 stdbuf -o0 cut -d# -f2 | # -o0 ... unbuffered; stdbuf runs the cut command unbuffered
 while read index; do
 	volumes=$(pactl get-sink-volume "$index" | grep -Po '\d+(?=%)')
