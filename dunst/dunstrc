@@ -490,6 +490,12 @@
     timeout = 10
     history_ignore = yes
 
+[pactl-volume-notifier-muted]
+	stack_tag = "pactl-volume-notifier"
+	summary = "Muted"
+	foreground = "#666666"
+	highlight = "#666666"
+
 [my-daily-backups]
     stack_tag = "my-daily-backups"
     background = "#cccccc"

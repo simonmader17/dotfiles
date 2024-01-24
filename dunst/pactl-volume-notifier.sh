@@ -15,31 +15,35 @@ while read index; do
 	volumes=$(pactl get-sink-volume "$index" | grep -Po '\d+(?=%)')
 	volume=$(echo "$volumes" | head -n 1) # assuming left and right volumes are equal
 	if pactl get-sink-mute "$index" | grep "yes"; then
-		volume="0"
+		muted=true
+	else
+		muted=false
 	fi
-	if [ "$volume" -ge 70 ]; then
+
+	urg="low"
+	if [ "$volume" -gt 100 ]; then
+		icon="$icon_overamplified"
+		urg="critical"
+	elif [ "$volume" -ge 70 ]; then
 		icon="$icon_high"
 	elif [ "$volume" -ge 30 ]; then
 		icon="$icon_medium"
-	else
+	elif [ "$volume" -gt 0 ]; then
 		icon="$icon_low"
+	else
+		icon="$icon_muted"
 	fi
-	urg="low"
-	if [ "$volume" = 0 ]; then
-		volume="Muted"
-		bar=""
+
+	if [[ "$muted" == true || "$volume" == 0 ]]; then
+		summary="Muted"
 		icon="$icon_muted"
 	elif [ "$volume" -lt 100 ]; then
-		volume=" $volume"
-	elif [ "$volume" -gt 100 ]; then
-		icon="$icon_overamplified"
-		urg="critical"
+		summary=" $volume%"
+	else
+		summary="$volume%"
 	fi
-	if [ "$volume" != "Muted" ]; then
-		volume="$volume%"
-	fi
-	if [ "$volume" != "$prev_volume" ]; then
-		dunstify -h string:x-dunst-stack-tag:pactl-volume-notifier -u "$urg" -i "$icon" "$volume" -h "int:value:$volume"
-		prev_volume="$volume"
+	if [ "$volume$muted" != "$prev_volume" ]; then
+		dunstify -h string:x-dunst-stack-tag:pactl-volume-notifier -u "$urg" -i "$icon" "$summary" -h "int:value:$volume"
+		prev_volume="$volume$muted"
 	fi
 done
