@@ -493,8 +493,9 @@
 [pactl-volume-notifier-muted]
 	stack_tag = "pactl-volume-notifier"
 	summary = "Muted"
-	foreground = "#666666"
-	highlight = "#666666"
+	frame_color = "#0000005a" # also changes progress bar frame color
+	foreground = "#2525255a"
+	highlight = "#2525255a"
 
 [my-daily-backups]
     stack_tag = "my-daily-backups"
