@@ -492,7 +492,7 @@
 
 [pactl-volume-notifier-muted]
 	stack_tag = "pactl-volume-notifier"
-	summary = "Muted"
+	summary = "Muted*"
 	frame_color = "#0000005a" # also changes progress bar frame color
 	foreground = "#2525255a"
 	highlight = "#2525255a"

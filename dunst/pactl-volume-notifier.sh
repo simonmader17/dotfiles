@@ -12,6 +12,7 @@ pactl subscribe |
 grep --line-buffered " sink " |
 stdbuf -o0 cut -d# -f2 | # -o0 ... unbuffered; stdbuf runs the cut command unbuffered
 while read index; do
+	device=$(pactl list sinks | grep "Sink #$index" -A10 | grep "Description" | cut -d " " -f 2- | sed "s/\(.\{21\}\).*/\1.../")
 	volumes=$(pactl get-sink-volume "$index" | grep -Po '\d+(?=%)')
 	volume=$(echo "$volumes" | head -n 1) # assuming left and right volumes are equal
 	if pactl get-sink-mute "$index" | grep "yes"; then
@@ -35,12 +36,12 @@ while read index; do
 	fi
 
 	if [[ "$muted" == true || "$volume" == 0 ]]; then
-		summary="Muted"
+		summary="Muted [$device]"
 		icon="$icon_muted"
 	elif [ "$volume" -lt 100 ]; then
-		summary=" $volume%"
+		summary=" $volume% [$device]"
 	else
-		summary="$volume%"
+		summary="$volume% [$device]"
 	fi
 	if [ "$volume$muted" != "$prev_volume" ]; then
 		dunstify -h string:x-dunst-stack-tag:pactl-volume-notifier -u "$urg" -i "$icon" "$summary" -h "int:value:$volume"
