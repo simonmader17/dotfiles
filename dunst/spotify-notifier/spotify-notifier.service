@@ -1,0 +1,8 @@
+[Unit]
+Description=Spotify Dunst Notifier
+
+[Service]
+ExecStart=%h/dotfiles/dunst/spotify-notifier/spotify-notifier.sh
+
+[Install]
+WantedBy=default.target

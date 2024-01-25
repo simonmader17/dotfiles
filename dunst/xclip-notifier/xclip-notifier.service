@@ -1,0 +1,8 @@
+[Unit]
+Description=X Clipboard Dunst Notifier
+
+[Service]
+ExecStart=%h/dotfiles/dunst/xclip-notifier/xclip-notifier.sh
+
+[Install]
+WantedBy=default.target

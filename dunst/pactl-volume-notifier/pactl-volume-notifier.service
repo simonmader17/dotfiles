@@ -1,0 +1,8 @@
+[Unit]
+Description=Pulseaudio Volume Dunst Notifier
+
+[Service]
+ExecStart=%h/dotfiles/dunst/pactl-volume-notifier/pactl-volume-notifier.sh
+
+[Install]
+WantedBy=default.target

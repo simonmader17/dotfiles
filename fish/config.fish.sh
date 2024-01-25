@@ -20,7 +20,7 @@ end
 
 function fish_greeting
 	# fish_logo
-	# python3 /home/simon/scripts/ascii.py | lolcat
+	# python3 $HOME/scripts/ascii.py | lolcat
 	colorscript random
 end
 
@@ -72,8 +72,8 @@ set --export PATH "$GOPATH/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /home/simon/miniconda3/bin/conda
-    eval /home/simon/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f $HOME/miniconda3/bin/conda
+    eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
 
