@@ -42,6 +42,7 @@ send_notification() {
 			fi
 
 			dunstify -a Spotify -h string:x-dunst-stack-tag:spotify-notifier -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>" -h "int:value:$volume"
+			maim --window $(xdotool search --class "Dunst") | xclip -selection clipboard -t image/png
 		fi
 }
 
