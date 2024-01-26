@@ -1,14 +1,18 @@
 #!/bin/bash
 
 send_text_notification() {
-	ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -i "accessories-clipboard" -u low --action="default,openGedit" "Copied text to clipboard" "$content")
-	case "$ACTION" in
-		"default")
-			xclip -selection clipboard -o | gedit - &
-			;;
-		"2")
-			;;
-	esac
+	# Don't send text notification if a recording software like obs is running,
+	# to protect sensitive data like copied password.
+	if ! pgrep obs; then
+		ACTION=$(dunstify -h string:x-dunst-stack-tag:xclip-notifier -i "accessories-clipboard" -u low --action="default,openGedit" "Copied text to clipboard" "$content")
+		case "$ACTION" in
+			"default")
+				xclip -selection clipboard -o | gedit - &
+				;;
+			"2")
+				;;
+		esac
+	fi
 }
 
 send_image_notification() {

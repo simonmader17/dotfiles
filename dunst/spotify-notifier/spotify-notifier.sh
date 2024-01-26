@@ -41,8 +41,13 @@ send_notification() {
 				icon="$iconfile"
 			fi
 
+			if pgrep obs; then
+				dunstctl close-all
+			fi
 			dunstify -a Spotify -h string:x-dunst-stack-tag:spotify-notifier -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>" -h "int:value:$volume"
-			maim --window $(xdotool search --class "Dunst") | xclip -selection clipboard -t image/png
+			if pgrep obs; then
+				maim --window $(xdotool search --class "Dunst") >/mnt/d/Fotos/spotify-dunst.png
+			fi
 		fi
 }
 
