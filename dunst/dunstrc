@@ -236,7 +236,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/local/bin/dmenu -p Dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
@@ -478,6 +478,28 @@
     foreground = "#000000"
     frame_color = "#000000"
     timeout = 30
+
+[Shazam-success]
+	stack_tag = "shazam"
+	background = "#0797ff"
+	timeout = 20
+	format="<b>%a</b>\n%b - <i>%s</i>"
+
+[Shazam-recording]
+	stack_tag = "shazam"
+	body = "Recording*"
+	background = "#0797ff"
+	timeout = 0
+	new_icon = "/usr/share/Pictures/shazam.png"
+	format="<b>%s</b>\n%b"
+
+[Shazam-failed]
+	stack_tag = "shazam"
+	body = "Failed*"
+	background = "#ff0000"
+	timeout = 0
+	new_icon = "/usr/share/Pictures/shazam.png"
+	format="<b>%s</b>\n%b"
 
 [brightness-control]
     stack_tag = "brightness_control"
