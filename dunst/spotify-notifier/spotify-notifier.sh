@@ -17,6 +17,10 @@ rm_cached_files() {
 
 trap rm_cached_files SIGINT
 
+# send_notification()
+#
+# $1 ... pause/resume icon
+# $2 ... true if volume bar should be shown
 send_notification() {
 	if playerctl --player=spotify status; then
 		title=$(playerctl --player=spotify metadata title)
@@ -44,7 +48,12 @@ send_notification() {
 			if pgrep obs; then
 				dunstctl close-all
 			fi
-			dunstify -a Spotify -h string:x-dunst-stack-tag:spotify-notifier -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>" -h "int:value:$volume"
+			if [ "$2" = "true" ]; then
+				dunstify -a Spotify -h string:x-dunst-stack-tag:spotify-notifier -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>" -h "int:value:$volume"
+			else
+				dunstify -a Spotify -h string:x-dunst-stack-tag:spotify-notifier -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>"
+			fi
+
 			if pgrep obs; then
 				maim --window $(xdotool search --class "Dunst") >/mnt/d/Fotos/spotify-dunst.png
 			fi
@@ -72,7 +81,7 @@ follow_title() {
 follow_volume() {
 	playerctl --player=spotify --follow volume |
 	while read line; do
-		send_notification
+		send_notification "" true
 	done
 }
 
