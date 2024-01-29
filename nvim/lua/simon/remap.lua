@@ -1,5 +1,9 @@
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- spell checking
+vim.keymap.set("n", "<F8>", ":set spell! spelllang=de_at<CR>")
+vim.keymap.set("i", "<F8>", ":set spell! spelllang=de_at<CR>")
+
 -- nvim-tree
 vim.keymap.set("n", "<leader>pv", ":NvimTreeFocus<CR>")
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
