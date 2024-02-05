@@ -193,20 +193,16 @@ thermal-zone = 1
 warn-temperature = 60
 
 format = <ramp> <label>
-; format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
+format-foreground = ${colors.color5}
 label = %temperature-c%
-label-foreground = ${colors.color5}
+
+format-warn = <ramp> <label-warn>
+format-warn-foreground = #f00
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 󱃃
 ramp-1 = 󰔏
 ramp-2 = 󱃂
-;ramp-foreground = #0a81f5
-ramp-foreground = ${colors.color5}
 
 [module/memory]
 type = internal/memory
