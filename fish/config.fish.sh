@@ -24,7 +24,7 @@ function fish_greeting
 	colorscript random
 end
 
-set --export PATH "$HOME/.local/bin:$PATH"
+set --export PATH "$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Set CHROME_EXECUTABLE for flutter
 set --export CHROME_EXECUTABLE "/usr/bin/brave-browser"
