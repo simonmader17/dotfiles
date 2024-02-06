@@ -83,7 +83,7 @@ bottom = true
 padding-left = 1
 
 modules-left = fs-root fs-d fs-f fs-p spotify
-modules-right = nordvpn wlan eth2
+modules-right = nordvpn wireless-network eth2
 
 ################################################################################
 # MODULES
