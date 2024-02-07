@@ -12,3 +12,7 @@ betterlockscreen -u "$WALLPAPER" --fx
 
 # Link /usr/share/Pictures/lockscreen to wallpaper
 ln -sf "$WALLPAPER" /mnt/d/Wallpaper/lockscreen
+
+# Generate chromium theme
+~/sources/ChromiumPywal/generate-theme.sh
+ln -sf ~/sources/ChromiumPywal/Pywal ~/00-CHROMIUM-PYWAL-QUICK-ACCESS
