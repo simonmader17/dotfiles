@@ -322,11 +322,11 @@ label-charging = %percentage%%
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-foreground = ${colors.color2}
-animation-discharging-0 = "󰁺"
-animation-discharging-1 = "󰁼"
+animation-discharging-0 = "󰁹"
+animation-discharging-1 = "󰂀"
 animation-discharging-2 = "󰁾"
-animation-discharging-3 = "󰂀"
-animation-discharging-4 = "󰁹"
+animation-discharging-3 = "󰁼"
+animation-discharging-4 = "󰁺"
 animation-discharging-framerate = 2500
 label-discharging = %percentage%% (%consumption%)
 
