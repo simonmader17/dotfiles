@@ -6,6 +6,10 @@ else
 	theme_name=$1
 fi
 
-echo "$theme_name.json"
+theme_path="$HOME/dotfiles/themes/$theme_name.json"
+if [ ! -f "$theme_path" ]; then
+	echo "Theme \"$theme_name\" doesn't exist." >&2
+	exit 2
+fi
 
-wal --theme "$HOME/dotfiles/themes/$theme_name.json" -o "$HOME/dotfiles/scripts/post-pywal.sh"
+wal --theme "$theme_path" -o "$HOME/dotfiles/scripts/post-pywal.sh"
