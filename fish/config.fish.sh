@@ -81,3 +81,6 @@ end
 if test "$TERM" = "xterm-kitty"
 	alias ssh="kitten ssh"
 end
+
+# change-theme completions
+source ~/dotfiles/scripts/change-theme/change-theme-completions-fish.sh

@@ -145,3 +145,6 @@ nordvpn() {
 	command nordvpn "$@"
 	command polybar-msg hook nordvpn 1 >> /dev/null
 }
+
+# change-theme completions
+source ~/dotfiles/scripts/change-theme/change-theme-completions-bash.sh
