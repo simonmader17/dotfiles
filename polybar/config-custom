@@ -304,10 +304,16 @@ label-connected = 󰛳 LAN connected 󰕒 %upspeed% 󰇚 %downspeed%
 
 [module/my-network]
 type = custom/ipc
-hook-0 = cat ~/dotfiles/polybar/my-network/current
-initial = 1
 format-foreground = ${colors.color1}
-click-left = ~/dotfiles/polybar/my-network/my-network.sh && polybar-msg hook my-network 1
+hook-0 = ~/dotfiles/polybar/my-network/my-network.sh
+initial = 1
+click-left = ~/dotfiles/polybar/my-network/show-ip.sh && polybar-msg hook my-network 1
+
+[module/my-network-updates]
+type = custom/script
+exec = polybar-msg hook my-network 1
+interval = 3.0
+format = ""
 
 [module/wireless-icon]
 type = internal/network
@@ -322,8 +328,7 @@ ramp-signal-2 = 󰤢
 ramp-signal-3 = 󰤥
 ramp-signal-4 = 󰤨
 
-format-disconnected = "%{A1:gnome-control-center:}󰤣%{A}"
-format-disconnected-foreground = ${colors.color1}
+format-disconnected = ""
 
 [module/wired-icon]
 type = internal/network
@@ -333,8 +338,7 @@ interval = 3.0
 format-connected = "󰛳"
 format-connected-foreground = ${colors.color1}
 
-format-disconnected = "%{A1:gnome-control-center:}󰅛%{A}"
-format-disconnected-foreground = ${colors.color1}
+format-disconnected = ""
 
 [module/wireless-speeds]
 type = internal/network
