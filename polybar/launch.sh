@@ -19,6 +19,9 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 sleep 1
 
+# Setup my-network current file
+echo "<Show IP>" > ~/dotfiles/polybar/my-network/current
+
 primary=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
 others=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
 monitors=(${primary[@]} ${others[@]})

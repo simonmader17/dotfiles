@@ -63,7 +63,7 @@ cursor-scroll = ns-resize
 inherit = bar/base
 
 modules-left = i3 xwindow
-modules-right = fs-root fs-d fs-f fs-p audiodevice pulseaudio memory gpu cpu temperature nordvpn wireless-network eth battery date
+modules-right = fs-root fs-d fs-f fs-p audiodevice pulseaudio memory gpu cpu temperature nordvpn wireless-icon wired-icon my-network wireless-speeds wired-speeds battery date
 
 ################################################################################
 # TOP BAR ON SMALL SCREENS
@@ -83,7 +83,7 @@ bottom = true
 padding-left = 1
 
 modules-left = fs-root fs-d fs-f fs-p spotify
-modules-right = nordvpn wireless-network eth2
+modules-right = nordvpn wireless-icon wired-icon my-network wireless-speeds wired-speeds
 
 ################################################################################
 # MODULES
@@ -260,7 +260,7 @@ hook-0 = ~/.config/polybar/nordvpn.sh
 initial = 1
 format = 󰒘 <output>
 format-foreground = ${colors.color6}
-click-left = bash ~/.config/polybar/nordvpn_connect.sh && polybar-msg hook nordvpn 1
+click-left = ~/.config/polybar/nordvpn_connect.sh && polybar-msg hook nordvpn 1
 
 ################################################################################
 
@@ -301,6 +301,64 @@ inherit = module/wired-network
 [module/eth2]
 inherit = module/wired-network
 label-connected = 󰛳 LAN connected 󰕒 %upspeed% 󰇚 %downspeed%
+
+[module/my-network]
+type = custom/ipc
+hook-0 = cat ~/dotfiles/polybar/my-network/current
+initial = 1
+format-foreground = ${colors.color1}
+click-left = ~/dotfiles/polybar/my-network/my-network.sh && polybar-msg hook my-network 1
+
+[module/wireless-icon]
+type = internal/network
+interface-type = wireless
+interval = 3.0
+
+format-connected = <ramp-signal>
+format-connected-foreground = ${colors.color1}
+ramp-signal-0 = 󰤯
+ramp-signal-1 = 󰤟
+ramp-signal-2 = 󰤢
+ramp-signal-3 = 󰤥
+ramp-signal-4 = 󰤨
+
+format-disconnected = "%{A1:gnome-control-center:}󰤣%{A}"
+format-disconnected-foreground = ${colors.color1}
+
+[module/wired-icon]
+type = internal/network
+interface-type = wired
+interval = 3.0
+
+format-connected = "󰛳"
+format-connected-foreground = ${colors.color1}
+
+format-disconnected = "%{A1:gnome-control-center:}󰅛%{A}"
+format-disconnected-foreground = ${colors.color1}
+
+[module/wireless-speeds]
+type = internal/network
+interface-type = wireless
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-foreground = ${colors.color1}
+label-connected = 󰕒 %upspeed% 󰇚 %downspeed%
+
+format-disconnected = ""
+format-disconnected-foreground = ${colors.color1}
+
+[module/wired-speeds]
+type = internal/network
+interface-type = wired
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-foreground = ${colors.color1}
+label-connected = 󰕒 %upspeed% 󰇚 %downspeed%
+
+format-disconnected = ""
+format-disconnected-foreground = ${colors.color1}
 
 ################################################################################
 
