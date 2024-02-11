@@ -63,7 +63,7 @@ cursor-scroll = ns-resize
 inherit = bar/base
 
 modules-left = i3 xwindow
-modules-right = fs-root fs-d fs-f fs-p audiodevice pulseaudio memory gpu cpu temperature nordvpn wireless-icon wired-icon my-network wireless-speeds wired-speeds battery date
+modules-right = fs-root fs-d fs-f fs-p audiodevice pulseaudio memory gpu cpu temperature nordvpn wireless-icon wired-icon my-network my-network-updates wireless-speeds wired-speeds battery date
 
 ################################################################################
 # TOP BAR ON SMALL SCREENS
@@ -83,7 +83,7 @@ bottom = true
 padding-left = 1
 
 modules-left = fs-root fs-d fs-f fs-p spotify
-modules-right = nordvpn wireless-icon wired-icon my-network wireless-speeds wired-speeds
+modules-right = nordvpn wireless-icon wired-icon my-network my-network-updates wireless-speeds wired-speeds
 
 ################################################################################
 # MODULES
