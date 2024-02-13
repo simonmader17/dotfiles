@@ -1,3 +1,6 @@
 .secrets
 i3/.specific-floating-windows.config
 polybar/my-network/current
+i3/manual/*
+!i3/manual/manual.pdf
+!i3/manual/manual.tex
