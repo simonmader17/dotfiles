@@ -21,7 +21,15 @@ end
 function fish_greeting
 	# fish_logo
 	# python3 $HOME/scripts/ascii.py | lolcat
-	colorscript random
+	if test (random 0 1) = 0
+		colorscript random
+	else
+		if test (random 1 4096) -gt 1
+			pokemon-colorscripts -r
+		else
+			pokemon-colorscripts -r -s
+		end
+	end
 end
 
 set --export PATH "$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
