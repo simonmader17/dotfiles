@@ -13,3 +13,6 @@
 [submodule "zsh/plugins/zsh-vi-mode"]
 	path = zsh/plugins/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode
+[submodule "zsh/plugins/zsh-colored-man-pages"]
+	path = zsh/plugins/zsh-colored-man-pages
+	url = https://github.com/ael-code/zsh-colored-man-pages

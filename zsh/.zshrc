@@ -104,6 +104,9 @@ function init_other_plugins() {
 }
 zvm_after_init_commands+=(init_other_plugins)
 
+# zsh-colored-man-pages
+source ~/dotfiles/zsh/plugins/zsh-colored-man-pages/colored-man-pages.plugin.zsh
+
 # zsh-syntax-highlighting (should be at the end of the config file)
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
