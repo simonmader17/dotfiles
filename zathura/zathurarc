@@ -1,0 +1,22 @@
+set selection-clipboard clipboard
+set sandbox none
+
+set adjust-open width
+
+set guioptions shv
+
+set selection-notification false
+
+set scroll-step 150
+
+# Font
+set font "CaskaydiaCove Nerd Font regular 10"
+
+# Colors
+set recolor-lightcolor "#2f2d2e"
+set recolor-darkcolor "#f4ecd6"
+
+set highlight-color "#006699"
+set highlight-fg "#ffffff"
+set highlight-active-color "#315bef"
+set highlight-transparency 0.5
