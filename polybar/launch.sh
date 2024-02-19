@@ -1,23 +1,13 @@
 #!/bin/bash
+# My polybar launch script.
 
-# # Terminate already running bar instances
-# killall -q polybar
-# 
-# # Wait until the processes have been shut down
-# while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-# 
-# # Launch bar1 and bar2
-# MONITORS=$(xrandr --query | grep " connected" | cut -d" " -f1)
-# 
-# MONITORS=$MONITORS polybar top
+sleep 1 # wait a sec
 
-# Terminate already running bar instances
-killall -q polybar polybar-msg
+# Terminate already running bar instances and wait until the processes have
+# been shut down
+killall -qvw polybar polybar-msg
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-sleep 1
+sleep 1 # wait a sec
 
 # Setup my-network current file
 echo "<Show IP>" > ~/dotfiles/polybar/my-network/current
