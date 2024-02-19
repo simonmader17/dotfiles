@@ -97,6 +97,7 @@ ls.add_snippets("markdown", {
 	s("bf", { t("**"), i(1, "BOLD_TEXT"), t("**"), i(0) }),
 	s("it", { t("*"), i(1, "ITALIC_TEXT"), t("*"), i(0) }),
 	s("tt", { t("`"), i(1, "TYPEWRITTEN_TEXT"), t("`"), i(0) }),
+	s("sc", { t("["), i(1, "SMALLCAPS_TEXT"), t("]{.smallcaps}"), i(0) }),
 })
 
 ls.add_snippets("c", {
