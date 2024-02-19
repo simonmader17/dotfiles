@@ -17,7 +17,7 @@ margin-bottom = 0
 margin-left = 0
 
 [colors]
-background = ${xrdb:color0transparent}
+background = ${xrdb:background-transparent}
 background-alt = ${xrdb:color8}
 foreground = ${xrdb:foreground}
 color1 = ${xrdb:color1}

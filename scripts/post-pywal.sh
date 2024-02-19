@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Add transparency to color0
-color0="$(xrdb -get color0)"
-echo "*color0transparent: ${color0:0:1}AA${color0:1}" >> ~/.cache/wal/colors.Xresources
+# Add transparency to background
+background="$(xrdb -get background)"
+echo "*background-transparent: ${background:0:1}AA${background:1}" >> ~/.cache/wal/colors.Xresources
 xrdb -merge ~/.cache/wal/colors.Xresources
 
 WALLPAPER="$(cat ~/.cache/wal/colors.json | jq ".wallpaper" -r)"
