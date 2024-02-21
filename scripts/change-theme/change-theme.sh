@@ -12,4 +12,4 @@ if [ ! -f "$theme_path" ]; then
 	exit 2
 fi
 
-wal --theme "$theme_path" -o "$HOME/dotfiles/scripts/post-pywal.sh"
+wal --theme "$theme_path" -o "$HOME/dotfiles/scripts/pywal/post-pywal.sh"
