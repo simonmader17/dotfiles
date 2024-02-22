@@ -1,6 +1,6 @@
 #!/bin/bash
 dunstify -h string:x-dunst-stack-tag:wallpaper-setter -i ~/dotfiles/scripts/pywal/pywal-icon.png "Wallpaper Setter" "Setting \"$1\" as wallpaper..."
-wal -i "$1" -o ~/dotfiles/scripts/pywal/post-pywal.sh |
+wal -i "$1" --backend colorz -o ~/dotfiles/scripts/pywal/post-pywal.sh |
 while read -r line; do
 	dunstify -h string:x-dunst-stack-tag:wallpaper-setter -i ~/dotfiles/scripts/pywal/pywal-icon.png "Wallpaper Setter" "${line##*: }"
 done
