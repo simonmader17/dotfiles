@@ -5,6 +5,8 @@
 # ██╗███████╗███████║██║  ██║██║  ██║╚██████╗
 # ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
+stty -ixon # Disable ctrl-s and ctrl-q
+
 # Change prompt
 source ~/dotfiles/zsh/themes/sashimi-zsh-theme/sashimi.zsh-theme
 
