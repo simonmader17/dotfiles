@@ -5,6 +5,11 @@
 # ██╗███████╗███████║██║  ██║██║  ██║╚██████╗
 # ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
+if [ -n "$1" ] && [ "$1" != "--no-greeting" ]; then
+	echo "Usage: source $0 [ --no-greeting ]"
+	return 1
+fi
+
 stty -ixon # Disable ctrl-s and ctrl-q
 
 # Change prompt
@@ -126,8 +131,6 @@ greeting() {
 		fi
 	fi
 }
-if [ -f /usr/local/bin/greeting ]; then
-	/usr/local/bin/greeting
-else
-	greeting
+if [ "$1" != "--no-greeting" ]; then
+	[ -f /usr/local/bin/greeting ] && /usr/local/bin/greeting || greeting
 fi

@@ -17,7 +17,7 @@ export PDF_READER="zathura"
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
 
 # When running zsh
-[ -n "$ZSH_VERSION" ] && [ -f "$HOME/.zshrc" ] && source "$HOME/.zshrc"
+[ -n "$ZSH_VERSION" ] && [ -f "$HOME/.zshrc" ] && source "$HOME/.zshrc" --no-greeting
 
 # PATH stuff
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
