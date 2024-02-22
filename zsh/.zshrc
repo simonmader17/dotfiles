@@ -113,11 +113,18 @@ source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ################################################################################
 # Greeting
 ################################################################################
-if [ $(($RANDOM % 2)) = 0 ]; then
-	colorscript -r
-else
-	if [ $(($RANDOM % 4096)) -gt 0 ]
-	then pokemon-colorscripts -r
-	else pokemon-colorscripts -r -s
+greeting() {
+	if [ $(($RANDOM % 2)) = 0 ]; then
+		colorscript -r
+	else
+		if [ $(($RANDOM % 4096)) -gt 0 ]
+		then pokemon-colorscripts -r
+		else pokemon-colorscripts -r -s
+		fi
 	fi
+}
+if [ -f /usr/local/bin/greeting ]; then
+	/usr/local/bin/greeting
+else
+	greeting
 fi
