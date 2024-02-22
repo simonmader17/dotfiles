@@ -1,1 +1,1 @@
-/home/simon/dotfiles/profile/.profile
+./.profile
