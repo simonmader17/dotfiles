@@ -17,7 +17,8 @@ margin-bottom = 0
 margin-left = 0
 
 [colors]
-background = ${xrdb:background-transparent}
+background-opaque = ${xrdb:background}
+background = ${xrdb:background-transparent:${colors.background-opaque}}
 background-alt = ${xrdb:color8}
 foreground = ${xrdb:foreground}
 color1 = ${xrdb:color1}
@@ -26,6 +27,7 @@ color3 = ${xrdb:color3}
 color4 = ${xrdb:color4}
 color5 = ${xrdb:color5}
 color6 = ${xrdb:color6}
+color6-transparent = ${xrdb:color6-transparent:${colors.color6}}
 alert = #f00
 
 [bar/base]
@@ -33,17 +35,14 @@ monitor = ${env:MONITOR:}
 width = 100%
 height = 27
 
-background = ${colors.color6}
+background = ${colors.color6-transparent}
 foreground = ${colors.foreground}
 
 line-size = 3
 
 font-0 = "CaskaydiaCove Nerd Font:size=11;1"
-# For emojis:
 font-1 = "Noto Color Emoji:scale=10"
-# For ascii characters:
-# font-2 = unifont:fontformat=truetype:size=11:heavy;-2
-font-2 = DejaVu Sans;size=11
+font-2 = "Fira Sans:size=11"
 
 enable-ipc = true
 
@@ -106,11 +105,13 @@ label-unfocused-background = ${colors.background}
 # focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-padding = 1
-label-focused-background = ${colors.color6}
+label-focused-foreground = ${colors.background-opaque}
+label-focused-background = ${colors.color6-transparent}
 
 # visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-padding = ${self.label-focused-padding}
+label-visible-foreground = ${self.label-focused-foreground}
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 
@@ -130,12 +131,14 @@ label-mode-background = ${colors.color2}
 [module/before-xwindow]
 type = custom/text
 format-background = ${colors.background}
-label = " (˵ ͡° ͜ʖ ͡°˵)🤍 "
+# label = " ( ͡° ͜ʖ ͡°) "
+# label-font = 3
+label = " 💻 "
 
 [module/xwindow]
 type = internal/xwindow
-label = " %title:0:21:...% "
-label-foreground = ${colors.foreground}
+format-foreground = ${colors.background-opaque}
+label = " %instance% - %title:0:21:...% "
 
 ################################################################################
 
@@ -258,6 +261,7 @@ label = "%temperature-c% "
 
 format-warn = <ramp> <label-warn>
 format-warn-foreground = #f00
+format-warn-background = ${colors.background}
 label-warn = "%temperature-c% "
 
 ramp-0 = " 󱃃"
@@ -328,6 +332,7 @@ type = custom/script
 exec = polybar-msg hook my-network 1
 interval = 3.0
 format = ""
+tail = true
 
 [module/wireless-icon]
 type = internal/network
