@@ -61,6 +61,9 @@ export CHROME_PATH="$(which brave-browser)"
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
 
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # change-theme completions
 source ~/dotfiles/scripts/change-theme/change-theme-completions-bash.sh
 
