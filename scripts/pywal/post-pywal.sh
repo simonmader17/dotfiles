@@ -10,6 +10,15 @@ xrdb -merge ~/.cache/wal/colors.Xresources
 
 WALLPAPER="$(cat ~/.cache/wal/colors.json | jq ".wallpaper" -r)"
 
+# On wayland
+if type swww; then
+	pgrep swww || swww init
+    swww img --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 "$WALLPAPER"
+fi
+if type waybar; then
+	~/dotfiles/hypr/scripts/restart-waybar.sh
+fi
+
 # Update betterlockscreen background
 # dunstify -h string:x-dunst-stack-tag:wallpaper-setter -i ~/dotfiles/scripts/pywal/pywal-icon.png "Wallpaper Setter" "Updating betterlockscreen background."
 betterlockscreen -u "$WALLPAPER" --fx

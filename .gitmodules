@@ -15,4 +15,4 @@
 	url = https://github.com/jeffreytse/zsh-vi-mode
 [submodule "zsh/plugins/zsh-colored-man-pages"]
 	path = zsh/plugins/zsh-colored-man-pages
-	url = https://github.com/ael-code/zsh-colored-man-pages
+	url = git@github.com:simonmader17/zsh-colored-man-pages.git
