@@ -16,3 +16,9 @@
 [submodule "zsh/plugins/zsh-colored-man-pages"]
 	path = zsh/plugins/zsh-colored-man-pages
 	url = git@github.com:simonmader17/zsh-colored-man-pages.git
+[submodule "rofi/rofi-themes-collection"]
+	path = rofi/rofi-themes-collection
+	url = https://github.com/newmanls/rofi-themes-collection
+[submodule "zsh/plugins/zsh-history-substring-search"]
+	path = zsh/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search

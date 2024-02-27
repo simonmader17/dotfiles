@@ -11,8 +11,6 @@ export TERMINAL="kitty"
 export BROWSER="brave-browser"
 export PDF_READER="zathura"
 
-[ -f "$HOME/.device-specific-profile" ] && source "$HOME/.device-specific-profile"
-
 # When running bash
 [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
 
@@ -22,3 +20,6 @@ export PDF_READER="zathura"
 # PATH stuff
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+
+# Device specific profile
+[ -f "$HOME/.device-specific-profile" ] && source "$HOME/.device-specific-profile"

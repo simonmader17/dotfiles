@@ -48,11 +48,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		-- LaTeX open pdf
 		vim.keymap.set("n", "<F6>", function()
 			local pdfName = vim.fn.expand("%"):gsub("[.]tex", ".pdf")
-			return ":!xdg-open \"" .. pdfName .. "\" &<CR><CR>"
+			return ":!zathura \"" .. pdfName .. "\" &<CR><CR>"
 		end, { expr = true })
 		vim.keymap.set("i", "<F6>", function()
 			local pdfName = vim.fn.expand("%"):gsub("[.]tex", ".pdf")
-			return "<ESC>:!xdg-open \"" .. pdfName .. "\" &<CR><CR>a"
+			return "<ESC>:!zathura \"" .. pdfName .. "\" &<CR><CR>a"
 		end, { expr = true })
 	end
 })
@@ -92,20 +92,20 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		-- markdown open pdf
 		vim.keymap.set("n", "<F6>", function()
 			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".pdf")
-			return ":!xdg-open \"" .. pdfName .. "\" &<CR><CR>"
+			return ":!zathura \"" .. pdfName .. "\" &<CR><CR>"
 		end, { expr = true })
 		vim.keymap.set("i", "<F6>", function()
 			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".pdf")
-			return "<ESC>:!xdg-open \"" .. pdfName .. "\" &<CR><CR>a"
+			return "<ESC>:!zathura \"" .. pdfName .. "\" &<CR><CR>a"
 		end, { expr = true })
 		-- markdown open html
 		vim.keymap.set("n", "<F18>", function()
 			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".html")
-			return ":!xdg-open \"" .. pdfName .. "\" &<CR><CR>"
+			return ":!zathura \"" .. pdfName .. "\" &<CR><CR>"
 		end, { expr = true })
 		vim.keymap.set("i", "<F18>", function()
 			local pdfName = vim.fn.expand("%"):gsub("[.]md", ".html")
-			return "<ESC>:!xdg-open \"" .. pdfName .. "\" &<CR><CR>a"
+			return "<ESC>:!zathura \"" .. pdfName .. "\" &<CR><CR>a"
 		end, { expr = true })
 	end
 })
