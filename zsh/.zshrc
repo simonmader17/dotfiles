@@ -78,11 +78,6 @@ source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # zstyle ':autocomplete:history-search-backward:*' list-lines 16
 
-# zsh-history-substring-search
-source ~/dotfiles/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 # zsh-vi-mode
 source ~/dotfiles/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
 function zvm_after_select_vi_mode() {
@@ -125,6 +120,13 @@ source ~/dotfiles/zsh/plugins/zsh-colored-man-pages/colored-man-pages.plugin.zsh
 
 # zsh-syntax-highlighting (should be at the end of the config file)
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh-history-substring-search
+source ~/dotfiles/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[OA' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^[OB' history-substring-search-down
 
 ################################################################################
 # Greeting
