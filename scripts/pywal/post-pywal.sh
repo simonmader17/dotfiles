@@ -13,15 +13,13 @@ WALLPAPER="$(cat ~/.cache/wal/colors.json | jq ".wallpaper" -r)"
 # On wayland
 if type swww; then
 	pgrep swww || swww init
-    swww img --transition-type outer --transition-pos 0.854,0.977 --transition-step 90 "$WALLPAPER"
+    swww img --transition-type outer --transition-pos 0.97,0.99 --transition-step 90 "$WALLPAPER"
 fi
-if type waybar; then
-	~/dotfiles/hypr/scripts/restart-waybar.sh
-fi
+type waybar && ~/dotfiles/waybar/launch.sh &
 
 # Update betterlockscreen background
 # dunstify -h string:x-dunst-stack-tag:wallpaper-setter -i ~/dotfiles/scripts/pywal/pywal-icon.png "Wallpaper Setter" "Updating betterlockscreen background."
-betterlockscreen -u "$WALLPAPER" --fx
+type betterlockscreen && betterlockscreen -u "$WALLPAPER" --fx
 
 # Link /usr/share/Pictures/lockscreen to wallpaper
 # dunstify -h string:x-dunst-stack-tag:wallpaper-setter -i ~/dotfiles/scripts/pywal/pywal-icon.png "Wallpaper Setter" "Linking lockscreen image to wallpaper."
