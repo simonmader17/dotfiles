@@ -19,8 +19,8 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:📅 %d.%m.%Y 🕖 %H:%M}",
-    "format-alt": "{:📅 %Y-%m-%d 🕖 %H:%M:%S}"
+    "format": "{:🕖 %H:%M 📅 %d.%m.%Y}",
+    "format-alt": "{:🕖 %H:%M:%S 📅 %Y-%m-%d}"
   },
   "custom/wallpaper": {
 	"format": "🖼️",
