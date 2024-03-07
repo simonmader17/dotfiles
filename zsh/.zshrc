@@ -45,6 +45,7 @@ nordvpn() {
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -144,3 +145,7 @@ greeting() {
 if [ "$1" != "--no-greeting" ]; then
 	[ -f /usr/local/bin/greeting ] && /usr/local/bin/greeting || greeting
 fi
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

@@ -22,6 +22,12 @@
     "format": "{:🕖 %H:%M 📅 %d.%m.%Y}",
     "format-alt": "{:🕖 %H:%M:%S 📅 %Y-%m-%d}"
   },
+ //  "custom/updates": {
+ //    "exec": "~/dotfiles/scripts/arch-updates.sh",
+	// "return-type": "json",
+	// "interval": 10800,
+	// "format": "📦 {}"
+ //  },
   "custom/wallpaper": {
 	"format": "🖼️",
 	"on-click": "~/dotfiles/scripts/pywal/random-wallpaper.sh &"

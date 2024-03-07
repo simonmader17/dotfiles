@@ -71,73 +71,79 @@ window#waybar {
 #custom-applauncher {
   background-color: @foreground;
   color: @background;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #window {
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #disks {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #disk {
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #wireplumber {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #memory {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #cpu {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #temperature {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #network {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #clock {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
+}
+
+#custom-updates {
+  background-color: @background;
+  color: @foreground;
+  padding: 0.1em 0.5em;
 }
 
 #custom-wallpaper {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #custom-powermenu {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }
 
 #tray {
   background-color: @background;
   color: @foreground;
-  padding: 0 0.5em;
+  padding: 0.1em 0.5em;
 }

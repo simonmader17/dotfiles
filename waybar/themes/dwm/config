@@ -14,6 +14,7 @@
 
   // Modules right
   "modules-right": [
+	// "custom/updates",
     "group/disks",
     "wireplumber",
     "memory",

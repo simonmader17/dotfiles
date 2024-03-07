@@ -28,4 +28,5 @@ ln -sf "$WALLPAPER" /mnt/d/Wallpaper/lockscreen
 # Generate chromium theme
 # dunstify -h string:x-dunst-stack-tag:wallpaper-setter -i ~/dotfiles/scripts/pywal/pywal-icon.png "Wallpaper Setter" "Generating chromium theme."
 ~/sources/ChromiumPywal/generate-theme.sh
+~/dotfiles/scripts/pywalium/generate.sh
 ln -sf ~/sources/ChromiumPywal/Pywal ~/00-CHROMIUM-PYWAL-QUICK-ACCESS
