@@ -19,8 +19,8 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:🕖 %H:%M 📅 %d.%m.%Y}",
-    "format-alt": "{:🕖 %H:%M:%S 📅 %Y-%m-%d}"
+    "format": "🕖 {:%H:%M 📅 %d.%m.%Y}",
+    "format-alt": "🕖 {:%H:%M:%S 📅 %Y-%m-%d}"
   },
  //  "custom/updates": {
  //    "exec": "~/dotfiles/scripts/arch-updates.sh",
