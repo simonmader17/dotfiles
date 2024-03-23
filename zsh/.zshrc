@@ -66,7 +66,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Load Angular CLI autocompletion.
-type ng && source <(ng completion script)
+type ng &>/dev/null && source <(ng completion script)
 
 # change-theme completions
 source ~/dotfiles/scripts/change-theme/change-theme-completions-bash.sh
@@ -136,7 +136,7 @@ bindkey '^[OB' history-substring-search-down
 # Greeting
 ################################################################################
 greeting() {
-	if type colorscript && type pokemon-colorscripts; then
+	if type colorscript &>/dev/null && type pokemon-colorscripts &>/dev/null; then
 		if [ $(($RANDOM % 2)) = 0 ]; then
 			colorscript -r
 		else
@@ -146,7 +146,7 @@ greeting() {
 			fi
 		fi
 	else
-		echo "Hello $USER"
+		type cowsay &>/dev/null && cowsay "Hello $USER" || echo "Hello $USER"
 	fi
 }
 if [ "$1" != "--no-greeting" ]; then
