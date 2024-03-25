@@ -1,7 +1,7 @@
 #!/bin/bash
 
-current_in=$(hyprctl getoption general:gaps_in | awk 'NR==2{print $2}')
-current_out=$(hyprctl getoption general:gaps_out | awk 'NR==2{print $2}')
+current_in=$(hyprctl getoption general:gaps_in | awk 'NR==1{print $3}')
+current_out=$(hyprctl getoption general:gaps_out | awk 'NR==1{print $3}')
 
 new_in=$(($current_in - 5))
 new_out=$(($current_out - 5))
