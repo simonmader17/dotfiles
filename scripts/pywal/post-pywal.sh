@@ -30,3 +30,7 @@ ln -sf "$WALLPAPER" /mnt/d/Wallpaper/lockscreen
 ~/sources/ChromiumPywal/generate-theme.sh
 ~/dotfiles/scripts/pywalium/generate.sh
 ln -sf ~/sources/ChromiumPywal/Pywal ~/00-CHROMIUM-PYWAL-QUICK-ACCESS
+
+# apply spicetify and restart notification service
+type spicetify && spicetify apply
+systemctl --user restart spotify-notifier.service
