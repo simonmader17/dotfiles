@@ -12,12 +12,13 @@
 	// Modules right
 	"modules-right": [
 		"tray",
-		"disk",
+		"custom/disks",
 		"wireplumber",
 		"memory",
 		"cpu",
 		"temperature",
 		"network",
+		"battery",
 		"clock"
 	]
 }

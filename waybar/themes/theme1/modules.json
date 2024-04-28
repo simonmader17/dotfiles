@@ -18,8 +18,16 @@
 	},
 
 	// Right modules
-	"disk": {
+	"tray": {
+		"spacing": 5
+	},
+	"custom/disks": {
 		"format": "",
+		"interval": 60,
+		"exec": "~/dotfiles/scripts/my-disks.sh",
+		"exec-if": "exit 0", // always run
+		"tooltip": true,
+		"tooltip-format": "{}"
 	},
 	"wireplumber": {
 		"format": "{volume}% {icon}",
@@ -39,19 +47,29 @@
 	"network": {
 		"interval": 3,
 		"format-ethernet": "{icon}",
-		"format-wifi": "{essid} {icon}",
+		"format-wifi": "{icon}",
 		"format-icons": {
 			"ethernet": [""],
 			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
 		},
 		"format-disconnected": "Disconnected 󰤮",
 		"tooltip-format-ethernet": "IP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}",
-		"tooltip-format-wifi": "IP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}\nSignal Strength: {signalStrength}"
+		"tooltip-format-wifi": "{essid}\nIP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}\nSignal Strength: {signalStrength}"
+	},
+	"battery": {
+		"interval": 15,
+		"states": {
+			"critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""],
+		"format-charging": "{capacity}% {icon}",
+		"tooltip-format": "{timeTo}\nPower Draw: {power}W\nCharge Cycles: {cycles}\nHealth: {health}%"
 	},
 	"clock": {
 		"interval": 1,
-    "format": "{:%H:%M 󰥔 %d.%m.%Y }",
-    "format-alt": "{:%H:%M:%S 󰥔 %Y-%m-%d }",
+		"format": "{:%H:%M 󰥔 %d.%m.%Y }",
+		"format-alt": "{:%H:%M:%S 󰥔 %Y-%m-%d }",
 		"tooltip-format": "{calendar}",
 		"calendar": {
 			"mode": "month",
@@ -61,9 +79,6 @@
 				"weeks": "<span color='grey'><b>KW{}</b></span>"
 			}
 		}
-	},
-	"tray": {
-		"spacing": 5
 	}
 }
 // vim:ft=jsonc

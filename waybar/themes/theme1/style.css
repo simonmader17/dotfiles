@@ -12,10 +12,11 @@
 .modules-center,
 .modules-right {
 	background-color: alpha(@background, 0.8);
+	color: @foreground;
 	border: solid 4px @color8;
 	border-radius: 999px;
 
-	margin: 10px 20px 0 20px;
+	margin: 10px 10px 0 10px;
 	padding: 2px 5px;
 }
 
@@ -83,12 +84,13 @@ tooltip {
 }
 
 #tray,
-#disk,
+#custom-disks,
 #wireplumber,
 #memory,
 #cpu,
 #temperature,
-#network {
+#network,
+#battery {
 	padding-right: 3ex;
 }
 
@@ -96,7 +98,7 @@ tooltip {
 	padding-left: 1ex;
 }
 
-#disk {
+#custom-disks {
 	color: @color1;
 }
 
@@ -118,6 +120,26 @@ tooltip {
 
 #network {
 	color: @color3;
+}
+
+#battery {
+	color: @color6;
+}
+
+@keyframes pulse-critical {
+	0% {
+		color: @color6;
+	}
+	50% {
+		color: red;
+	}
+	100% {
+		color: @color6;
+	}
+}
+
+#battery.critical.discharging {
+	animation: pulse-critical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 #clock {
