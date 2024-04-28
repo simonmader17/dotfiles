@@ -24,10 +24,9 @@
 	"custom/disks": {
 		"format": "",
 		"interval": 60,
-		"exec": "~/dotfiles/scripts/my-disks.sh",
+		"exec": "~/dotfiles/waybar/themes/theme1/scripts/custom-disks.sh",
 		"exec-if": "exit 0", // always run
-		"tooltip": true,
-		"tooltip-format": "{}"
+		"escape": false
 	},
 	"wireplumber": {
 		"format": "{volume}% {icon}",
