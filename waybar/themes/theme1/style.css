@@ -1,0 +1,115 @@
+@import "../../../../.cache/wal/colors-waybar.css";
+
+* {
+	font-family: "CaskaydiaCove Nerd Font";
+	font-size: 100%;
+	font-weight: 900;
+
+	background: none;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	background-color: alpha(@background, 0.8);
+	border: solid 4px @color8;
+	border-radius: 999px;
+
+	margin: 10px 20px 0 20px;
+	padding: 2px 5px;
+}
+
+.modules-left {
+	padding: 0;
+}
+
+window#waybar.empty .modules-center {
+	opacity: 0;
+}
+
+/* Workspaces *****************************************************************/
+
+#workspaces button {
+	background: none;
+  color: @foreground;
+  transition: all 0.2s ease-in-out;
+	border-radius: 8px;
+	padding: 2px 5px;
+}
+
+#workspaces button:first-child {
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+}
+
+#workspaces button:last-child {
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+
+#workspaces button.visible {
+  background-color: @color6;
+  color: @background;
+}
+
+#workspaces button:hover {
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: alpha(@color8, 0.8);
+}
+
+#workspaces button.visible:hover {
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: shade(alpha(@color6, 0.8), 1.2);
+}
+
+/* Tooltip ********************************************************************/
+
+tooltip {
+	background-color: alpha(@background, 0.8);
+}
+
+/* Modules ********************************************************************/
+
+#disk,
+#wireplumber,
+#memory,
+#cpu,
+#temperature,
+#network {
+	padding-right: 3ex;
+}
+
+#disk {
+	color: @color1;
+	padding-left: 1ex;
+}
+
+#wireplumber {
+	color: @color6;
+}
+
+#memory {
+	color: @color2;
+}
+
+#cpu {
+	color: @color5;
+}
+
+#temperature {
+	color: @color5;
+}
+
+#network {
+	color: @color3;
+}
+
+#clock {
+	color: @color4;
+	padding-right: 2ex;
+}
+

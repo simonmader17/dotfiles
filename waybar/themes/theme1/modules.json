@@ -1,0 +1,57 @@
+// ███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+// ████╗ ████║██╔═══██╗██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+// ██╔████╔██║██║   ██║██║  ██║██║   ██║██║     █████╗  ███████╗
+// ██║╚██╔╝██║██║   ██║██║  ██║██║   ██║██║     ██╔══╝  ╚════██║
+// ██║ ╚═╝ ██║╚██████╔╝██████╔╝╚██████╔╝███████╗███████╗███████║
+// ╚═╝     ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+{
+	// Left modules
+	"hyprland/workspaces": {},
+
+	// Center modules
+	"hyprland/window": {
+		"max-length": 50,
+		"rewrite": {
+			"(.*) - Brave": "🌍 $1",
+			"(.*) - Visual Studio Code": "&lt;/&gt; $1"
+		}
+	},
+
+	// Right modules
+	"disk": {
+		"format": "",
+	},
+	"wireplumber": {
+		"format": "{volume}% {icon}",
+		"format-icons": ["", "", ""],
+		"format-muted": "Muted "
+	},
+	"memory": {
+		"format": "{percentage}% "
+	},
+	"cpu": {
+		"format": "{usage}% "
+	},
+	"temperature": {
+		"format": "{temperatureC}°C {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"network": {
+		"interval": 3,
+		"format-ethernet": "{icon}",
+		"format-wifi": "{essid} {icon}",
+		"format-icons": {
+			"ethernet": [""],
+			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+		},
+		"format-disconnected": "Disconnected 󰤮",
+		"tooltip-format-ethernet": "IP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}",
+		"tooltip-format-wifi": "IP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}\nSignal Strength: {signalStrength}"
+	},
+	"clock": {
+		"interval": 1,
+    "format": "{:%H:%M 󰥔 %d.%m.%Y }",
+    "format-alt": "{:%H:%M:%S 󰥔 %Y-%m-%d }"
+	}
+}
+// vim:ft=jsonc
