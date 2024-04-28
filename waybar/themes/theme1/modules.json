@@ -51,7 +51,19 @@
 	"clock": {
 		"interval": 1,
     "format": "{:%H:%M 󰥔 %d.%m.%Y }",
-    "format-alt": "{:%H:%M:%S 󰥔 %Y-%m-%d }"
+    "format-alt": "{:%H:%M:%S 󰥔 %Y-%m-%d }",
+		"tooltip-format": "{calendar}",
+		"calendar": {
+			"mode": "month",
+			"weeks-pos": "right",
+			"format": {
+				"today": "<span color='#F6F7C4'><b>{}</b></span>",
+				"weeks": "<span color='grey'><b>KW{}</b></span>"
+			}
+		}
+	},
+	"tray": {
+		"spacing": 5
 	}
 }
 // vim:ft=jsonc
