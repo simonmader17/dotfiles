@@ -33,14 +33,21 @@
 		"format-muted": "Muted "
 	},
 	"memory": {
-		"format": "{percentage}% "
+		"interval": 2,
+		"format": "{percentage}% ",
+		"tooltip-format": "{used}GiB memory used out of {total}GiB ({percentage}%)\n{swapUsed}GiB swap used out of {swapTotal}GiB ({swapPercentage}%)"
 	},
 	"cpu": {
+		"interval": 2,
 		"format": "{usage}% "
 	},
 	"temperature": {
+		"thermal-zone": 1,
+		"interval": 2,
+		"critical-threshold": 80,
 		"format": "{temperatureC}°C {icon}",
-		"format-icons": ["", "", "", "", ""]
+		"format-icons": ["", "", "", "", ""],
+		"tooltip-format": "{temperatureC}°C\n{temperatureF}°F\n{temperatureK}°K"
 	},
 	"network": {
 		"interval": 3,
@@ -73,7 +80,7 @@
 			"mode": "month",
 			"weeks-pos": "right",
 			"format": {
-				"today": "<span color='#F6F7C4'><b>{}</b></span>",
+				"today": "<span color='#ff6666'><b>{}</b></span>",
 				"weeks": "<span color='grey'><b>KW{}</b></span>"
 			}
 		}

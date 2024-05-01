@@ -102,6 +102,10 @@ tooltip {
 	color: @color1;
 }
 
+#custom-disks.critical {
+	animation: pulse-critical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 #wireplumber {
 	color: @color6;
 }
@@ -118,6 +122,10 @@ tooltip {
 	color: @color5;
 }
 
+#temperature.critical {
+	animation: pulse-critical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 #network {
 	color: @color3;
 }
@@ -125,6 +133,17 @@ tooltip {
 #battery {
 	color: @color6;
 }
+
+#battery.critical.discharging {
+	animation: pulse-critical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+#clock {
+	color: @color4;
+	padding-right: 2ex;
+}
+
+/* Keyframes ******************************************************************/
 
 @keyframes pulse-critical {
 	0% {
@@ -137,13 +156,3 @@ tooltip {
 		color: @color6;
 	}
 }
-
-#battery.critical.discharging {
-	animation: pulse-critical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-#clock {
-	color: @color4;
-	padding-right: 2ex;
-}
-

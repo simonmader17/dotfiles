@@ -1,22 +1,34 @@
 #!/bin/bash
+# waybar custom module expects: $test\n$tooltip\n$class
 
-total_used=0
-total_total=0
+critical_threshold=90
+critical=false
 
-echo
+# First line: $text
+echo -n -e "\n"
+
+# Second line: $tooltip
 ~/dotfiles/scripts/my-disks.sh |
 {
 	while read line; do
-		echo -n -e "$line\r"
-	
-		used=$(echo $line | awk '{print $1}' | numfmt --from=iec-i --suffix=B | tr -d -c 0-9)
-		total=$(echo $line | awk '{print $5}' | numfmt --from=iec-i --suffix=B | tr -d -c 0-9)
-	
-		total_used=$(( $total_used + $used ))
-		total_total=$(( $total_total + $total ))
+		if [[ "$line" =~ ^In\ total.*$ ]]; then
+			# Last line of tooltip
+			echo -n -e "$line\n"
+		else
+			percentage_used=$(echo $line | grep -oP '\(\K[0-9]+(?=%)')
+			if [ $percentage_used -ge $critical_threshold ]; then
+				critical=true
+				echo -n -e "<span color='#ff6666'>$line</span>\r"
+			else
+				echo -n -e "$line\r"
+			fi
+		fi
 	done
-	
-	total_used=$(numfmt --to=iec-i --suffix=B $total_used)
-	total_total=$(numfmt --to=iec-i --suffix=B $total_total)
-	echo -n "In total $total_used used out of $total_total"
+
+	# Third line
+	if [[ "$critical" == true ]]; then
+		echo -n -e "critical\n"
+	else
+		echo -n -e "\n"
+	fi
 }
