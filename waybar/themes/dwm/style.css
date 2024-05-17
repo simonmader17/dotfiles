@@ -118,6 +118,12 @@ window#waybar {
   padding: 0.1em 0.5em;
 }
 
+#battery {
+  background-color: @background;
+  color: @foreground;
+  padding: 0.1em 0.5em;
+}
+
 #clock {
   background-color: @background;
   color: @foreground;

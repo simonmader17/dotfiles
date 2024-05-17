@@ -21,6 +21,7 @@
     "cpu",
     "temperature",
     "network",
+	"battery",
     "clock",
 	"custom/wallpaper",
     "custom/powermenu",

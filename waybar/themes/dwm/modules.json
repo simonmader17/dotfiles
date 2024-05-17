@@ -86,10 +86,20 @@
   "network": {
     "interval": 3,
     "format-ethernet": "🌐 Connected ⬆️ {bandwidthUpBytes} ⬇️ {bandwidthDownBytes}",
-    "format-wifi": "{icon} {essid}",
+    "format-wifi": "{icon} {essid} ⬆️ {bandwidthUpBytes} ⬇️ {bandwidthDownBytes}",
     "format-disconnected": "🌐❌ Not connected",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-icons": ["🛜"],
     "tooltip-format": "{ipaddr}"
+  },
+  // Battery
+  "battery": {
+	"interval": 10,
+	"states": {
+	  "critical": 20
+	},
+	"format": "🔋 {capacity}% ({power} W)",
+	"format-critical": "🪫 {capacity}% ({power} W)",
+	"format-charging": "🔌 {capacity}% ({power} W)",
   }
 }
 // vim: ft=jsonc

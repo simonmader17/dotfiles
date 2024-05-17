@@ -30,7 +30,7 @@
 	"wireplumber": {
 		"format": "{volume}% {icon}",
 		"format-icons": ["", "", ""],
-		"format-muted": "Muted "
+		"format-muted": ""
 	},
 	"memory": {
 		"interval": 2,
@@ -59,7 +59,7 @@
 		},
 		"format-disconnected": "Disconnected 󰤮",
 		"tooltip-format-ethernet": "IP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}",
-		"tooltip-format-wifi": "{essid}\nIP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}\nSignal Strength: {signalStrength}"
+		"tooltip-format-wifi": "{essid}\nIP-Address: {ipaddr}\nCurrent Download: {bandwidthDownBytes}\nCurrent Upload: {bandwidthUpBytes}\nSignal Strength: {signalStrength}%"
 	},
 	"battery": {
 		"interval": 15,
