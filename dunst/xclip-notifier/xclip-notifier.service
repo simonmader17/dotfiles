@@ -1,9 +1,0 @@
-[Unit]
-Description=X Clipboard Dunst Notifier
-PartOf=graphical-session.target
-
-[Service]
-ExecStart=%h/dotfiles/dunst/xclip-notifier/xclip-notifier.sh
-
-[Install]
-WantedBy=xsession.target

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+swaync_tag='string:x-canonical-private-synchronous:spotify-notifier'
+dunst_tag='string:x-dunst-stack-tag:spotify-notifier'
+
 # This icon cache maps a requested album art url to the tmp file that contains
 # the album art if it has already been requested. But the 3 different follow
 # processes have independent caches as they are different processes. Possible
@@ -49,9 +52,9 @@ send_notification() {
 				dunstctl close-all
 			fi
 			if [ "$2" = "true" ]; then
-				dunstify -a Spotify -h string:x-dunst-stack-tag:spotify-notifier -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>" -h "int:value:$volume"
+				notify-send -a Spotify -h "$swaync_tag" -h "$dunst_tag" -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>" -h "int:value:$volume"
 			else
-				dunstify -a Spotify -h string:x-dunst-stack-tag:spotify-notifier -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>"
+				notify-send -a Spotify -h "$swaync_tag" -h "$dunst_tag" -i "$icon" "$1$title" "$artist\nAlbum: <i>$album</i>"
 			fi
 
 			if pgrep obs; then

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+swaync_tag='string:x-canonical-private-synchronous:xclip-notifier'
+dunst_tag='string:x-dunst-stack-tag:xclip-notifier'
+
 icon_overamplified="audio-volume-overamplified-symbolic"
 icon_high="audio-volume-high-symbolic"
 icon_medium="audio-volume-medium-symbolic"
@@ -44,7 +47,7 @@ while read index; do
 		summary="$volume% [$device]"
 	fi
 	if [ "$volume$muted" != "$prev_volume" ]; then
-		dunstify -h string:x-dunst-stack-tag:pactl-volume-notifier -u "$urg" -i "$icon" "$summary" -h "int:value:$volume"
+		notify-send -a Volume -h "$swaync_tag" -h "$dunst_tag" -u "$urg" -i "$icon" "$summary" -h "int:value:$volume"
 		prev_volume="$volume$muted"
 	fi
 done
