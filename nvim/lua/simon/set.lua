@@ -38,3 +38,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		vim.bo.filetype = "plaintex"
 	end
 })
+
+-- filetype detection for hyprland config
+vim.filetype.add({
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
