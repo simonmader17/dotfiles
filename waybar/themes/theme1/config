@@ -19,7 +19,8 @@
 		"temperature",
 		"network",
 		"battery",
-		"clock"
+		"clock",
+		"custom/notification"
 	]
 }
 // vim:ft=jsonc

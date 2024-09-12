@@ -90,7 +90,8 @@ tooltip {
 #cpu,
 #temperature,
 #network,
-#battery {
+#battery,
+#clock {
 	padding-right: 3ex;
 }
 
@@ -147,6 +148,10 @@ tooltip {
 
 #clock {
 	color: @color4;
+}
+
+#custom-notification {
+	color: @color5;
 	padding-right: 2ex;
 }
 

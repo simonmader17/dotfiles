@@ -1,7 +1,7 @@
 #!/bin/bash
 # waybar custom module expects: $test\n$tooltip\n$class
 
-critical_threshold=90
+critical_threshold=95
 critical=false
 
 # First line: $text

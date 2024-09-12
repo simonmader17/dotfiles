@@ -13,6 +13,7 @@
 		"max-length": 50,
 		"rewrite": {
 			"(.*) - Brave": "🌍 $1",
+			"(.*) — Mozilla Firefox": "🌍 $1",
 			"(.*) - Visual Studio Code": "&lt;/&gt; $1"
 		}
 	},
@@ -84,6 +85,26 @@
 				"weeks": "<span color='grey'><b>KW{}</b></span>"
 			}
 		}
-	}
+	},
+	"custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span ><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span ><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span ><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span ><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 }
 // vim:ft=jsonc
