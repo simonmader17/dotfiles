@@ -1,6 +1,9 @@
 #!/bin/bash
 # Usage: ./brightness-control.sh { up | down }
 
+swaync_tag='string:x-canonical-private-synchronous:brightness-control'
+dunst_tag='string:x-dunst-stack-tag:brightness-control'
+
 icon_high="display-brightness-high-symbolic"
 icon_medium="display-brightness-medium-symbolic"
 icon_low="display-brightness-low-symbolic"
@@ -18,10 +21,7 @@ function send_notification {
 	else
 		icon="$icon_low"
 	fi
-	if [ "$brightness" -lt 100 ]; then
-		brightness=" $brightness"
-	fi
-	dunstify -h string:x-dunst-stack-tag:brightness-control -i "$icon" -u "low" "$brightness%" -h "int:value:$brightness"
+	notify-send -a Brightness -h "$swaync_tag" -h "$dunst_tag" -i "$icon" -u "low" "$brightness%" -h "int:value:$brightness"
 }
 
 case $1 in
