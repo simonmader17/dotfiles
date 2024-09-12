@@ -32,5 +32,11 @@ ln -sf "$WALLPAPER" /mnt/d/Wallpaper/lockscreen
 ln -sf ~/sources/ChromiumPywal/Pywal ~/00-CHROMIUM-PYWAL-QUICK-ACCESS
 
 # apply spicetify and restart notification service
-type spicetify && spicetify apply
+type spicetify && (spicetify apply || spicetify restore backup apply)
 systemctl --user restart spotify-notifier.service
+
+# update pywalfox colors
+~/.mozilla/firefox/simon-arkenfox/update-pywalfox.sh
+
+# reload swaync
+swaync-client --reload-css
