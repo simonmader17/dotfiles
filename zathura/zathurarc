@@ -16,7 +16,7 @@ set font "CaskaydiaCove Nerd Font regular 10"
 set recolor-lightcolor "#2f2d2e"
 set recolor-darkcolor "#f4ecd6"
 
-set highlight-color "#006699"
+set highlight-color "rgba(0, 102, 153, 0.5)"
 set highlight-fg "#ffffff"
-set highlight-active-color "#315bef"
-set highlight-transparency 0.5
+set highlight-active-color "rgba(51, 153, 204, 0.5)"
+# set highlight-transparency 0.5
