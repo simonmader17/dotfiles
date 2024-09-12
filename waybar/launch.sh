@@ -10,7 +10,8 @@ function waybar() {
 }
 
 if pgrep -x waybar; then
-	killall -ew waybar && waybar
+	# killall -ew waybar && waybar
+	killall -ew waybar
 else
 	waybar
 fi
