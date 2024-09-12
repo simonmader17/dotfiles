@@ -15,7 +15,7 @@ if type swww; then
 	pgrep swww || swww init
     swww img --transition-type outer --transition-pos 0.97,0.99 --transition-step 90 "$WALLPAPER"
 fi
-type waybar && ~/dotfiles/waybar/launch.sh &
+type waybar && ~/dotfiles/waybar/launch.sh && ~/dotfiles/waybar/launch.sh &
 
 # Update betterlockscreen background
 # dunstify -h string:x-dunst-stack-tag:wallpaper-setter -i ~/dotfiles/scripts/pywal/pywal-icon.png "Wallpaper Setter" "Updating betterlockscreen background."
