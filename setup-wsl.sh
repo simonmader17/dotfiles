@@ -17,7 +17,7 @@ fish -c fish_vi_key_bindings
 
 # My aliases for bash and fish
 mkdir -pv ~/.config/aliases
-ln -sfv ~/dotfiles/aliases/.aliases ~/.config/aliases/.aliases
+ln -sfv ~/dotfiles/aliases/aliases ~/.config/aliases/aliases
 
 # i3
 mkdir -pv ~/.config/i3

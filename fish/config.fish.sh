@@ -46,7 +46,7 @@ end
 bash ~/.fonts/*.sh
 
 # My Aliases
-source ~/.config/aliases/.aliases
+source ~/.config/aliases/aliases
 
 # NordVPN automatically update polybar hook
 function nordvpn

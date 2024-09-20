@@ -138,7 +138,7 @@ source ~/.fonts/*.sh
 /usr/bin/cat ~/.cache/wal/sequences
 
 # My Aliases
-source ~/.config/aliases/.aliases
+source ~/.config/aliases/aliases
 
 export PATH="$HOME/.cargo/bin:$PATH"
 

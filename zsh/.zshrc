@@ -22,7 +22,7 @@ HISTFILE=~/.cache/zsh/history
 setopt hist_ignore_all_dups
 
 # Aliases
-source ~/dotfiles/aliases/.aliases
+source ~/dotfiles/aliases/aliases
 
 # Basic auto/tab completions
 autoload -U compinit && compinit
