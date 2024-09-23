@@ -1,4 +1,6 @@
-# dotfiles :paintbrush:
+# dotfiles (old) :paintbrush:
+
+[New dotfiles repo.](https://github.com/simonmader17/.dotfiles)
 
 ![Desktop Screenshot](desktop.png)
 
